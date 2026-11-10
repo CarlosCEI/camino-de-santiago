@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Organiza tu Camino de Santiago: elige una ruta, planifica las etapas y prepara el viaje."
+  >
+  <title>Planifica tu Camino | Camino de Santiago</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="marca" href="index.html" aria-label="Camino de Santiago, inicio">
+      <span class="marca__simbolo" aria-hidden="true">✳</span>
+      <span class="marca__texto">
+        <strong>CAMINO DE SANTIAGO</strong>
+        <small>RUTAS · EXPERIENCIAS · PERSONAS</small>
+      </span>
+    </a>
+
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a href="rutas.html">Rutas</a>
+      <a href="etapas.html">Etapas</a>
+      <a href="planifica.html" aria-current="page">Planifica</a>
+      <a href="material.html">Material</a>
+    </nav>
+
+    <a class="boton boton--primario" href="#planificador">
+      Empieza a planificar <span aria-hidden="true">↓</span>
+    </a>
+  </header>
+
+  <main id="contenido">
+    <section class="hero-planifica" aria-labelledby="titulo-principal">
+      <div>
+        <p class="etiqueta">Tu viaje empieza con un plan</p>
+        <h1 id="titulo-principal">
+          Prepara tu<br>
+          <span>Camino</span>
+        </h1>
+        <p>
+          Elige una ruta, piensa cuántos días tienes y crea una primera
+          organización que puedas adaptar a tu ritmo.
+        </p>
+      </div>
+
+      <aside class="resumen-plan">
+        <p class="resumen-plan__etiqueta">Planificación orientativa</p>
+        <h2>Un paso cada vez</h2>
+        <p>
+          La propuesta te ayudará a ordenar ideas. Comprueba siempre distancias,
+          alojamientos y servicios antes de iniciar el viaje.
+        </p>
+        <a class="enlace" href="etapas.html">Consultar etapas <span aria-hidden="true">→</span></a>
+      </aside>
+    </section>
+
+    <section class="planificador" id="planificador" aria-labelledby="titulo-planificador">
+      <div class="planificador__cabecera">
+        <div>
+          <p class="etiqueta">Planificador de viaje</p>
+          <h2 id="titulo-planificador">Diseña tu primera propuesta</h2>
+        </div>
+        <p>Elige tus preferencias para organizar el recorrido.</p>
+      </div>
+
+      <!-- La generación automática de la planificación se completará en la PEC 5. -->
+      <form class="formulario-plan">
+        <div class="campo-plan">
+          <label for="ruta">Ruta</label>
+          <select id="ruta" name="ruta">
+            <option value="frances">Camino Francés</option>
+            <option value="portugues">Camino Portugués</option>
+            <option value="primitivo">Camino Primitivo</option>
+            <option value="norte">Camino del Norte</option>
+          </select>
+        </div>
+
+        <div class="campo-plan">
+          <label for="duracion">Días disponibles</label>
+          <select id="duracion" name="duracion">
+            <option value="">Selecciona una opción</option>
+            <option value="7">Una semana</option>
+            <option value="14">Dos semanas</option>
+            <option value="21">Tres semanas</option>
+            <option value="otro">Más tiempo</option>
+          </select>
+        </div>
+
+        <div class="campo-plan">
+          <label for="mes">Mes aproximado</label>
+          <select id="mes" name="mes">
+            <option value="">Selecciona un mes</option>
+            <option value="primavera">Primavera</option>
+            <option value="verano">Verano</option>
+            <option value="otono">Otoño</option>
+            <option value="invierno">Invierno</option>
+          </select>
+        </div>
+
+        <button class="boton boton--primario" type="button">
+          Crear mi planificación <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <p class="nota-interaccion">
+        El botón todavía no genera un plan; esta interacción se desarrollará en la PEC 5.
+      </p>
+
+      <div class="vista-plan" aria-labelledby="titulo-vista-plan">
+        <div class="vista-plan__encabezado">
+          <div>
+            <p class="etiqueta">Vista previa estática</p>
+            <h3 id="titulo-vista-plan">Ejemplo de recorrido · Camino Francés</h3>
+          </div>
+          <span class="estado-plan">Plan orientativo</span>
+        </div>
+
+        <div class="rejilla rejilla--tramos">
+          <article class="tramo-plan">
+            <span class="tramo-plan__dia">TRAMO 01</span>
+            <h4>O Cebreiro — Triacastela</h4>
+            <p>Consulta el perfil del terreno y los servicios antes de salir.</p>
+          </article>
+
+          <article class="tramo-plan">
+            <span class="tramo-plan__dia">TRAMO 02</span>
+            <h4>Triacastela — Sarria</h4>
+            <p>Revisa las opciones de alojamiento y descanso en la zona.</p>
+          </article>
+
+          <article class="tramo-plan">
+            <span class="tramo-plan__dia">TRAMO 03</span>
+            <h4>Sarria — Portomarín</h4>
+            <p>Organiza el agua, la comida y el ritmo de la jornada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion lista-preparacion" aria-labelledby="titulo-lista">
+      <div class="seccion__encabezado">
+        <div>
+          <p class="etiqueta">Antes de partir</p>
+          <h2 id="titulo-lista">Una lista para preparar el viaje</h2>
+        </div>
+        <p>Usa esta guía como recordatorio y adapta cada punto a tu situación.</p>
+      </div>
+
+      <!-- Las listas desplegables se podrán convertir en acordeones en la PEC 5. -->
+      <div class="rejilla rejilla--preparacion">
+        <article class="bloque-preparacion">
+          <span class="bloque-preparacion__numero">01</span>
+          <h3>Documentación</h3>
+          <ul>
+            <li>Documento de identidad vigente.</li>
+            <li>Información sobre la credencial del peregrino.</li>
+            <li>Reservas y datos de contacto importantes.</li>
+          </ul>
+          <p class="nota-interaccion">Panel desplegable pendiente para la PEC 5.</p>
+        </article>
+
+        <article class="bloque-preparacion">
+          <span class="bloque-preparacion__numero">02</span>
+          <h3>Salud y seguridad</h3>
+          <ul>
+            <li>Calzado probado antes del viaje.</li>
+            <li>Botiquín personal básico.</li>
+            <li>Teléfonos útiles y plan de emergencia.</li>
+          </ul>
+          <p class="nota-interaccion">Panel desplegable pendiente para la PEC 5.</p>
+        </article>
+
+        <article class="bloque-preparacion">
+          <span class="bloque-preparacion__numero">03</span>
+          <h3>Equipo y material</h3>
+          <ul>
+            <li>Mochila ajustada a tu cuerpo.</li>
+            <li>Ropa adecuada a la época del año.</li>
+            <li>Agua y protección frente al clima.</li>
+          </ul>
+          <a href="material.html">Consultar material <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="consejos-plan" aria-labelledby="titulo-consejos">
+      <p class="etiqueta">Consejos para planificar</p>
+      <h2 id="titulo-consejos">Deja margen para disfrutar del recorrido</h2>
+
+      <div class="rejilla rejilla--pasos">
+        <article class="tarjeta-paso">
+          <span class="tarjeta-paso__numero">01</span>
+          <h3>Comprueba la información</h3>
+          <p>Confirma horarios, alojamientos y servicios con fuentes actualizadas.</p>
+        </article>
+
+        <article class="tarjeta-paso">
+          <span class="tarjeta-paso__numero">02</span>
+          <h3>Planifica descansos</h3>
+          <p>Incluye pausas y evita organizar jornadas que no se ajusten a tu ritmo.</p>
+        </article>
+
+        <article class="tarjeta-paso">
+          <span class="tarjeta-paso__numero">03</span>
+          <h3>Adapta el plan</h3>
+          <p>El recorrido puede cambiar; deja margen para tomar decisiones sobre la marcha.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="llamada-final" aria-labelledby="titulo-cta">
+      <div>
+        <p class="etiqueta">Ya tienes una base</p>
+        <h2 id="titulo-cta">El siguiente paso es elegir tu ruta</h2>
+        <p>Explora las opciones y empieza a organizar tu recorrido.</p>
+      </div>
+      <a class="boton boton--primario" href="rutas.html">
+        Comparar rutas <span aria-hidden="true">→</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <a class="marca" href="index.html">
+      <span class="marca__simbolo" aria-hidden="true">✳</span>
+      <span class="marca__texto">
+        <strong>CAMINO DE SANTIAGO</strong>
+        <small>RUTAS · EXPERIENCIAS · PERSONAS</small>
+      </span>
+    </a>
+
+    <nav class="pie__navegacion" aria-label="Navegación del pie de página">
+      <a href="rutas.html">Rutas</a>
+      <a href="etapas.html">Etapas</a>
+      <a href="planifica.html" aria-current="page">Planifica</a>
+      <a href="material.html">Material</a>
+    </nav>
+
+    <p class="pie__credito">Proyecto académico · PEC 4 · Diseño Web</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
