@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Compara las principales rutas del Camino de Santiago y encuentra la que encaja contigo."
+  >
+  <title>Rutas | Camino de Santiago</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="marca" href="index.html" aria-label="Camino de Santiago, inicio">
+      <span class="marca__simbolo" aria-hidden="true">✳</span>
+      <span class="marca__texto">
+        <strong>CAMINO DE SANTIAGO</strong>
+        <small>RUTAS · EXPERIENCIAS · PERSONAS</small>
+      </span>
+    </a>
+
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a href="rutas.html" aria-current="page">Rutas</a>
+      <a href="etapas.html">Etapas</a>
+      <a href="planifica.html">Planifica</a>
+      <a href="material.html">Material</a>
+    </nav>
+
+    <a class="boton boton--primario" href="planifica.html">
+      Planifica tu Camino <span aria-hidden="true">→</span>
+    </a>
+  </header>
+
+  <main id="contenido">
+    <section class="hero-rutas" aria-labelledby="titulo-principal">
+      <div>
+        <p class="etiqueta">Encuentra tu recorrido</p>
+        <h1 id="titulo-principal">
+          La ruta que va contigo<br>
+        </h1>
+        <p>
+          Cada Camino tiene su propio ritmo. Compara sus paisajes, su carácter
+          y su nivel de exigencia para elegir por dónde empezar.
+        </p>
+      </div>
+
+      <aside class="panel-consejo">
+        <p class="panel-consejo__etiqueta">Una primera orientación</p>
+        <h2>Empieza por lo que buscas</h2>
+        <p>
+          ¿Te atrae la montaña, el mar, la historia o compartir el camino?
+          Tu respuesta puede ayudarte a elegir.
+        </p>
+        <a class="enlace" href="planifica.html">Preparar mi viaje <span aria-hidden="true">→</span></a>
+      </aside>
+    </section>
+
+    <section class="mapa-rutas" aria-labelledby="titulo-mapa">
+      <div class="seccion__encabezado">
+        <div>
+          <p class="etiqueta">Vista general</p>
+          <h2 id="titulo-mapa">Cuatro formas de llegar</h2>
+        </div>
+        <p>Esquema orientativo de las rutas destacadas.</p>
+      </div>
+
+      <div class="mapa-rutas__visual" role="img" aria-label="Esquema estático de cuatro rutas que convergen en Santiago">
+        <span class="mapa-rutas__origen">Distintos puntos de partida</span>
+        <span class="mapa-rutas__linea mapa-rutas__linea--frances">Camino Francés</span>
+        <span class="mapa-rutas__linea mapa-rutas__linea--portugues">Camino Portugués</span>
+        <span class="mapa-rutas__linea mapa-rutas__linea--primitivo">Camino Primitivo</span>
+        <span class="mapa-rutas__linea mapa-rutas__linea--norte">Camino del Norte</span>
+        <span class="mapa-rutas__destino">Santiago de Compostela</span>
+      </div>
+      <p class="nota-interaccion">
+        Mapa esquemático; la visualización interactiva queda pendiente para la PEC 5.
+      </p>
+    </section>
+
+    <section class="seccion listado-rutas" aria-labelledby="titulo-listado">
+      <div class="seccion__encabezado">
+        <div>
+          <p class="etiqueta">Rutas principales</p>
+          <h2 id="titulo-listado">Elige tu punto de partida</h2>
+        </div>
+      </div>
+
+      <!-- Los filtros se representan como estructura visual; su interacción queda pendiente para la PEC 5. -->
+      <div class="filtros-ruta" aria-label="Filtros de rutas pendientes para la PEC 5">
+        <span class="filtros-ruta__activo">Todas</span>
+        <span>Mar</span>
+        <span>Montaña</span>
+        <span>Historia</span>
+      </div>
+
+      <div class="rejilla rejilla--rutas">
+        <article class="tarjeta-ruta" id="frances">
+          <p class="tarjeta-ruta__numero">01 / TRADICIÓN</p>
+          <h3>Camino Francés</h3>
+          <p>
+            Una ruta muy conocida, con localidades históricas y una amplia
+            tradición de acogida al peregrino.
+          </p>
+          <ul class="datos-ruta">
+            <li><strong>Entorno:</strong> pueblos y paisajes variados</li>
+            <li><strong>Carácter:</strong> histórico y social</li>
+            <li><strong>Ideal para:</strong> una primera experiencia</li>
+          </ul>
+          <a href="etapas.html">Explorar etapas <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="tarjeta-ruta" id="portugues">
+          <p class="tarjeta-ruta__numero">02 / CULTURA</p>
+          <h3>Camino Portugués</h3>
+          <p>
+            Un recorrido que conecta Portugal con Galicia y ofrece distintas
+            variantes para organizar el viaje.
+          </p>
+          <ul class="datos-ruta">
+            <li><strong>Entorno:</strong> ciudades y paisaje gallego</li>
+            <li><strong>Carácter:</strong> cultural y cercano</li>
+            <li><strong>Variantes:</strong> central y costera</li>
+          </ul>
+          <a href="etapas.html">Explorar etapas <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="tarjeta-ruta" id="primitivo">
+          <p class="tarjeta-ruta__numero">03 / MONTAÑA</p>
+          <h3>Camino Primitivo</h3>
+          <p>
+            Una ruta de interior con tramos de montaña y un marcado carácter
+            histórico.
+          </p>
+          <ul class="datos-ruta">
+            <li><strong>Entorno:</strong> montaña y zonas rurales</li>
+            <li><strong>Carácter:</strong> tranquilo y exigente</li>
+            <li><strong>Ideal para:</strong> quienes buscan desnivel</li>
+          </ul>
+          <a href="etapas.html">Explorar etapas <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="tarjeta-ruta" id="norte">
+          <p class="tarjeta-ruta__numero">04 / COSTA</p>
+          <h3>Camino del Norte</h3>
+          <p>
+            Un itinerario por el norte peninsular que combina localidades
+            costeras, mar y tramos de interior.
+          </p>
+          <ul class="datos-ruta">
+            <li><strong>Entorno:</strong> costa y montaña</li>
+            <li><strong>Carácter:</strong> paisajístico y diverso</li>
+            <li><strong>Ideal para:</strong> amantes del Cantábrico</li>
+          </ul>
+          <a href="etapas.html">Explorar etapas <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion comparativa" aria-labelledby="titulo-comparativa">
+      <p class="etiqueta">Comparativa rápida</p>
+      <h2 id="titulo-comparativa">¿Qué ruta encaja contigo?</h2>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Ruta</th>
+              <th scope="col">Entorno destacado</th>
+              <th scope="col">Carácter</th>
+              <th scope="col">A tener en cuenta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Francés</th>
+              <td>Pueblos y paisajes variados</td>
+              <td>Histórico y social</td>
+              <td>Planificar el punto de inicio</td>
+            </tr>
+            <tr>
+              <th scope="row">Portugués</th>
+              <td>Ciudades y Galicia</td>
+              <td>Cultural</td>
+              <td>Elegir variante central o costera</td>
+            </tr>
+            <tr>
+              <th scope="row">Primitivo</th>
+              <td>Montaña y zonas rurales</td>
+              <td>Tranquilo y exigente</td>
+              <td>Valorar el desnivel</td>
+            </tr>
+            <tr>
+              <th scope="row">Norte</th>
+              <td>Costa y montaña</td>
+              <td>Paisajístico</td>
+              <td>Organizar bien las etapas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="llamada-final" aria-labelledby="titulo-cta">
+      <div>
+        <p class="etiqueta">Siguiente paso</p>
+        <h2 id="titulo-cta">¿Ya tienes una ruta en mente?</h2>
+        <p>Organiza las etapas y empieza a dar forma a tu viaje.</p>
+      </div>
+      <a class="boton boton--primario" href="planifica.html">
+        Planifica tu Camino <span aria-hidden="true">→</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <a class="marca" href="index.html">
+      <span class="marca__simbolo" aria-hidden="true">✳</span>
+      <span class="marca__texto">
+        <strong>CAMINO DE SANTIAGO</strong>
+        <small>RUTAS · EXPERIENCIAS · PERSONAS</small>
+      </span>
+    </a>
+
+    <nav class="pie__navegacion" aria-label="Navegación del pie de página">
+      <a href="rutas.html" aria-current="page">Rutas</a>
+      <a href="etapas.html">Etapas</a>
+      <a href="planifica.html">Planifica</a>
+      <a href="material.html">Material</a>
+    </nav>
+
+    <p class="pie__credito">Proyecto académico · PEC 4 · Diseño Web</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>          

@@ -462,3 +462,65 @@ main,
     gap: 14px;
   }
 }
+
+.comparativa {
+  padding: 72px clamp(20px, 4vw, 56px);
+}
+
+.comparativa h2 {
+  max-width: 760px;
+  margin: 0 0 32px;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.12;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: var(--superficie);
+}
+
+.comparativa table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.comparativa th,
+.comparativa td {
+  padding: 20px 24px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.6;
+  border-bottom: 1px solid var(--borde);
+}
+
+.comparativa thead th {
+  color: var(--cian);
+  background: var(--superficie-clara);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.comparativa tbody th {
+  width: 15%;
+  color: var(--verde-neon);
+  font-size: 15px;
+}
+
+.comparativa tbody td {
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+.comparativa tbody tr:last-child th,
+.comparativa tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.comparativa tbody tr:hover {
+  background: rgba(25, 231, 232, 0.04);
+}
