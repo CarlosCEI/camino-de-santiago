@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Encuentra rutas, etapas y consejos para preparar tu Camino de Santiago."
+  >
+  <title>Inicio | Camino de Santiago</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="marca" href="index.html" aria-label="Camino de Santiago, inicio">
+      <span class="marca__simbolo" aria-hidden="true">✳</span>
+      <span class="marca__texto">
+        <strong>CAMINO DE SANTIAGO</strong>
+        <small>RUTAS · EXPERIENCIAS · PERSONAS</small>
+      </span>
+    </a>
+
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a href="rutas.html">Rutas</a>
+      <a href="etapas.html">Etapas</a>
+      <a href="planifica.html">Planifica</a>
+      <a href="material.html">Material</a>
+    </nav>
+
+    <a class="boton boton--primario" href="planifica.html">
+      Planifica tu Camino <span aria-hidden="true">→</span>
+    </a>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="titulo-principal">
+      <div class="hero__texto">
+        <p class="etiqueta">Más que un viaje, una transformación</p>
+        <h1 id="titulo-principal">
+          Tu camino<br>
+          <span>empieza aquí</span>
+        </h1>
+        <p>
+          Rutas, consejos e información para preparar tu Camino de Santiago
+          y vivirlo a tu ritmo.
+        </p>
+        <a class="boton boton--primario" href="rutas.html">
+          Explorar rutas <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="hero__mapa">
+        <!-- Bloque visual del mapa. La ruta interactiva se completará en la PEC 5. -->
+        <div class="mapa-estatico" role="img" aria-label="Representación visual de una ruta del Camino">
+          <span class="mapa-estatico__punto">INICIO</span>
+          <span class="mapa-estatico__ruta" aria-hidden="true"></span>
+          <span class="mapa-estatico__punto mapa-estatico__punto--final">SANTIAGO</span>
+        </div>
+        <p class="nota-interaccion">Visualización interactiva pendiente para la PEC 5</p>
+      </div>
+    </section>
+
+    <section class="seccion rutas-destacadas" aria-labelledby="titulo-rutas">
+      <div class="seccion__encabezado">
+        <div>
+          <p class="etiqueta">Rutas destacadas</p>
+          <h2 id="titulo-rutas">Descubre la ruta que va contigo</h2>
+        </div>
+        <a class="enlace" href="rutas.html">Ver todas las rutas <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="rejilla rejilla--rutas">
+        <article class="tarjeta-ruta">
+          <p class="tarjeta-ruta__numero">01 / TRADICIÓN</p>
+          <h3>Camino Francés</h3>
+          <p>Una ruta histórica para conocer pueblos, paisajes y otros peregrinos.</p>
+          <a href="rutas.html#frances">Conocer la ruta <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="tarjeta-ruta">
+          <p class="tarjeta-ruta__numero">02 / CULTURA</p>
+          <h3>Camino Portugués</h3>
+          <p>Una alternativa para descubrir el patrimonio y los paisajes del noroeste.</p>
+          <a href="rutas.html#portugues">Conocer la ruta <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="tarjeta-ruta">
+          <p class="tarjeta-ruta__numero">03 / NATURALEZA</p>
+          <h3>Camino del Norte</h3>
+          <p>Un recorrido junto al Cantábrico, con mar, montaña y localidades costeras.</p>
+          <a href="rutas.html#norte">Conocer la ruta <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion preparacion" aria-labelledby="titulo-preparacion">
+      <p class="etiqueta">Antes de empezar</p>
+      <h2 id="titulo-preparacion">Prepara tu Camino paso a paso</h2>
+
+      <div class="rejilla rejilla--pasos">
+        <article class="tarjeta-paso">
+          <span class="tarjeta-paso__numero">01</span>
+          <h3>Elige tu ruta</h3>
+          <p>Compara las opciones y encuentra un recorrido que encaje contigo.</p>
+          <a href="rutas.html">Ver rutas</a>
+        </article>
+
+        <article class="tarjeta-paso">
+          <span class="tarjeta-paso__numero">02</span>
+          <h3>Organiza las etapas</h3>
+          <p>Consulta los tramos y distribuye el viaje según tu disponibilidad.</p>
+          <a href="etapas.html">Consultar etapas</a>
+        </article>
+
+        <article class="tarjeta-paso">
+          <span class="tarjeta-paso__numero">03</span>
+          <h3>Prepara el material</h3>
+          <p>Revisa qué llevar para caminar con comodidad y seguridad.</p>
+          <a href="material.html">Ver recomendaciones</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="llamada-final" aria-labelledby="titulo-cta">
+      <div>
+        <p class="etiqueta">Tu aventura comienza aquí</p>
+        <h2 id="titulo-cta">¿Listo para dar el primer paso?</h2>
+        <p>Empieza a organizar tu recorrido y convierte la idea en un plan.</p>
+      </div>
+      <a class="boton boton--primario" href="planifica.html">
+        Planifica tu Camino <span aria-hidden="true">→</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <a class="marca" href="index.html">
+      <span class="marca__simbolo" aria-hidden="true">✳</span>
+      <span class="marca__texto">
+        <strong>CAMINO DE SANTIAGO</strong>
+        <small>RUTAS · EXPERIENCIAS · PERSONAS</small>
+      </span>
+    </a>
+
+    <nav class="pie__navegacion" aria-label="Navegación del pie de página">
+      <a href="rutas.html">Rutas</a>
+      <a href="etapas.html">Etapas</a>
+      <a href="planifica.html">Planifica</a>
+      <a href="material.html">Material</a>
+    </nav>
+
+    <p class="pie__credito">Proyecto académico · PEC 4 · Diseño Web</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
