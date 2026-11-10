@@ -38,9 +38,7 @@
     <section class="hero-rutas" aria-labelledby="titulo-principal">
       <div>
         <p class="etiqueta">Encuentra tu recorrido</p>
-        <h1 id="titulo-principal">
-          La ruta que va contigo<br>
-        </h1>
+        <h1 id="titulo-principal">La ruta que va contigo</h1>
         <p>
           Cada Camino tiene su propio ritmo. Compara sus paisajes, su carácter
           y su nivel de exigencia para elegir por dónde empezar.
@@ -54,7 +52,9 @@
           ¿Te atrae la montaña, el mar, la historia o compartir el camino?
           Tu respuesta puede ayudarte a elegir.
         </p>
-        <a class="enlace" href="planifica.html">Preparar mi viaje <span aria-hidden="true">→</span></a>
+        <a class="enlace" href="planifica.html">
+          Preparar mi viaje <span aria-hidden="true">→</span>
+        </a>
       </aside>
     </section>
 
@@ -67,16 +67,29 @@
         <p>Esquema orientativo de las rutas destacadas.</p>
       </div>
 
-      <div class="mapa-rutas__visual" role="img" aria-label="Esquema estático de cuatro rutas que convergen en Santiago">
-        <span class="mapa-rutas__origen">Distintos puntos de partida</span>
-        <span class="mapa-rutas__linea mapa-rutas__linea--frances">Camino Francés</span>
-        <span class="mapa-rutas__linea mapa-rutas__linea--portugues">Camino Portugués</span>
-        <span class="mapa-rutas__linea mapa-rutas__linea--primitivo">Camino Primitivo</span>
-        <span class="mapa-rutas__linea mapa-rutas__linea--norte">Camino del Norte</span>
-        <span class="mapa-rutas__destino">Santiago de Compostela</span>
+      <div
+        class="mapa-3d mapa-3d--rutas"
+        data-camino-map="rutas"
+        role="img"
+        aria-label="Mapa topográfico 3D esquemático de las rutas del Camino de Santiago"
+      >
+        <canvas class="mapa-3d__canvas" aria-hidden="true"></canvas>
+
+        <span class="mapa-3d__etiqueta mapa-3d__etiqueta--origen">
+          DISTINTOS ORÍGENES
+        </span>
+
+        <span class="mapa-3d__etiqueta mapa-3d__etiqueta--destino">
+          SANTIAGO
+        </span>
+
+        <span class="mapa-3d__ayuda">
+          Arrastra para explorar · rueda para acercar
+        </span>
       </div>
+
       <p class="nota-interaccion">
-        Mapa esquemático; la visualización interactiva queda pendiente para la PEC 5.
+        Relieve y recorridos esquemáticos, creados como visualización ilustrativa.
       </p>
     </section>
 
@@ -88,16 +101,32 @@
         </div>
       </div>
 
-      <!-- Los filtros se representan como estructura visual; su interacción queda pendiente para la PEC 5. -->
-      <div class="filtros-ruta" aria-label="Filtros de rutas pendientes para la PEC 5">
-        <span class="filtros-ruta__activo">Todas</span>
-        <span>Mar</span>
-        <span>Montaña</span>
-        <span>Historia</span>
+      <div class="filtros-ruta" aria-label="Filtrar rutas">
+        <button
+          class="filtros-ruta__activo"
+          type="button"
+          data-filtro-ruta="todas"
+          aria-pressed="true"
+        >
+          Todas
+        </button>
+        <button type="button" data-filtro-ruta="mar" aria-pressed="false">
+          Mar
+        </button>
+        <button type="button" data-filtro-ruta="montana" aria-pressed="false">
+          Montaña
+        </button>
+        <button type="button" data-filtro-ruta="historia" aria-pressed="false">
+          Historia
+        </button>
       </div>
 
       <div class="rejilla rejilla--rutas">
-        <article class="tarjeta-ruta" id="frances">
+        <article
+          class="tarjeta-ruta"
+          id="frances"
+          data-categorias="historia"
+        >
           <p class="tarjeta-ruta__numero">01 / TRADICIÓN</p>
           <h3>Camino Francés</h3>
           <p>
@@ -109,10 +138,16 @@
             <li><strong>Carácter:</strong> histórico y social</li>
             <li><strong>Ideal para:</strong> una primera experiencia</li>
           </ul>
-          <a href="etapas.html">Explorar etapas <span aria-hidden="true">→</span></a>
+          <a href="etapas.html">
+            Explorar etapas <span aria-hidden="true">→</span>
+          </a>
         </article>
 
-        <article class="tarjeta-ruta" id="portugues">
+        <article
+          class="tarjeta-ruta"
+          id="portugues"
+          data-categorias="mar historia"
+        >
           <p class="tarjeta-ruta__numero">02 / CULTURA</p>
           <h3>Camino Portugués</h3>
           <p>
@@ -124,10 +159,16 @@
             <li><strong>Carácter:</strong> cultural y cercano</li>
             <li><strong>Variantes:</strong> central y costera</li>
           </ul>
-          <a href="etapas.html">Explorar etapas <span aria-hidden="true">→</span></a>
+          <a href="etapas.html">
+            Explorar etapas <span aria-hidden="true">→</span>
+          </a>
         </article>
 
-        <article class="tarjeta-ruta" id="primitivo">
+        <article
+          class="tarjeta-ruta"
+          id="primitivo"
+          data-categorias="montana historia"
+        >
           <p class="tarjeta-ruta__numero">03 / MONTAÑA</p>
           <h3>Camino Primitivo</h3>
           <p>
@@ -139,10 +180,16 @@
             <li><strong>Carácter:</strong> tranquilo y exigente</li>
             <li><strong>Ideal para:</strong> quienes buscan desnivel</li>
           </ul>
-          <a href="etapas.html">Explorar etapas <span aria-hidden="true">→</span></a>
+          <a href="etapas.html">
+            Explorar etapas <span aria-hidden="true">→</span>
+          </a>
         </article>
 
-        <article class="tarjeta-ruta" id="norte">
+        <article
+          class="tarjeta-ruta"
+          id="norte"
+          data-categorias="mar montana"
+        >
           <p class="tarjeta-ruta__numero">04 / COSTA</p>
           <h3>Camino del Norte</h3>
           <p>
@@ -154,7 +201,9 @@
             <li><strong>Carácter:</strong> paisajístico y diverso</li>
             <li><strong>Ideal para:</strong> amantes del Cantábrico</li>
           </ul>
-          <a href="etapas.html">Explorar etapas <span aria-hidden="true">→</span></a>
+          <a href="etapas.html">
+            Explorar etapas <span aria-hidden="true">→</span>
+          </a>
         </article>
       </div>
     </section>
@@ -209,6 +258,7 @@
         <h2 id="titulo-cta">¿Ya tienes una ruta en mente?</h2>
         <p>Organiza las etapas y empieza a dar forma a tu viaje.</p>
       </div>
+
       <a class="boton boton--primario" href="planifica.html">
         Planifica tu Camino <span aria-hidden="true">→</span>
       </a>
@@ -234,6 +284,15 @@
     <p class="pie__credito">Proyecto académico · PEC 4 · Diseño Web</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script type="module" src="js/main.js"></script>
 </body>
-</html>          
+</html>
