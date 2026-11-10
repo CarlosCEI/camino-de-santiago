@@ -1,0 +1,464 @@
+:root {
+  --fondo: #071116;
+  --superficie: #101d22;
+  --superficie-clara: #17262b;
+  --texto: #f2f5f3;
+  --texto-suave: #a7b6b7;
+  --verde-neon: #d5ff00;
+  --cian: #19e7e8;
+  --violeta: #a78bfa;
+  --borde: rgba(175, 220, 220, 0.16);
+  --ancho-contenido: 1440px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--texto);
+  background-color: var(--fondo);
+  background-image: radial-gradient(rgba(180, 215, 215, 0.13) 1px, transparent 1px);
+  background-size: 22px 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--cian);
+  outline-offset: 4px;
+}
+
+.salto-contenido {
+  position: absolute;
+  top: -60px;
+  left: 16px;
+  z-index: 10;
+  padding: 10px 14px;
+  color: var(--fondo);
+  background: var(--verde-neon);
+}
+
+.salto-contenido:focus {
+  top: 16px;
+}
+
+.cabecera,
+main,
+.pie {
+  width: min(100% - 48px, var(--ancho-contenido));
+  margin-inline: auto;
+}
+
+.cabecera {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.marca__simbolo {
+  color: var(--verde-neon);
+  font-size: 34px;
+  line-height: 1;
+}
+
+.marca__texto {
+  display: grid;
+  line-height: 1.35;
+}
+
+.marca__texto strong {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.marca__texto small {
+  color: var(--cian);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.navegacion,
+.pie__navegacion {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navegacion a,
+.pie__navegacion a {
+  color: var(--texto-suave);
+  font-size: 14px;
+  transition: color 160ms ease;
+}
+
+.navegacion a:hover,
+.pie__navegacion a:hover {
+  color: var(--cian);
+}
+
+.boton {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.boton--primario {
+  color: #101500;
+  background: var(--verde-neon);
+  box-shadow: 0 0 22px rgba(213, 255, 0, 0.14);
+}
+
+.boton--primario:hover {
+  box-shadow: 0 0 28px rgba(213, 255, 0, 0.32);
+}
+
+.hero {
+  min-height: 570px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 56px;
+  padding-block: 64px;
+}
+
+.etiqueta {
+  margin: 0 0 14px;
+  color: var(--cian);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.hero h1 span,
+.rutas-destacadas h2 span {
+  color: var(--verde-neon);
+}
+
+.hero__texto > p:not(.etiqueta) {
+  max-width: 490px;
+  margin: 24px 0 30px;
+  color: var(--texto-suave);
+  font-size: 18px;
+}
+
+.hero__mapa {
+  padding: 16px;
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(16, 29, 34, 0.96), rgba(5, 15, 21, 0.9));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+.mapa-estatico {
+  min-height: 340px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 34px;
+  border: 1px solid rgba(25, 231, 232, 0.15);
+  border-radius: 10px;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(25, 231, 232, 0.12), transparent 56%),
+    linear-gradient(135deg, #0b2027, #091318 60%, #11182b);
+}
+
+.mapa-estatico::before,
+.mapa-estatico::after {
+  content: "";
+  position: absolute;
+  inset: 12% -15%;
+  border: 1px solid rgba(25, 231, 232, 0.2);
+  border-radius: 50%;
+  transform: rotate(-16deg);
+}
+
+.mapa-estatico::after {
+  inset: 23% -12%;
+  border-color: rgba(167, 139, 250, 0.22);
+  transform: rotate(13deg);
+}
+
+.mapa-estatico__ruta {
+  position: absolute;
+  top: 49%;
+  left: 15%;
+  width: 70%;
+  height: 4px;
+  z-index: 1;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--cian), var(--verde-neon));
+  box-shadow: 0 0 16px var(--verde-neon);
+  transform: rotate(-12deg);
+}
+
+.mapa-estatico__punto {
+  position: relative;
+  z-index: 2;
+  padding: 7px 10px;
+  border: 1px solid var(--cian);
+  border-radius: 20px;
+  color: var(--cian);
+  background: var(--fondo);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.mapa-estatico__punto--final {
+  align-self: flex-start;
+  color: var(--verde-neon);
+  border-color: var(--verde-neon);
+}
+
+.nota-interaccion {
+  margin: 12px 4px 0;
+  color: var(--texto-suave);
+  font-size: 11px;
+}
+
+.seccion {
+  padding-block: 64px;
+  border-top: 1px solid var(--borde);
+}
+
+.seccion__encabezado {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.seccion h2,
+.llamada-final h2 {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.enlace {
+  color: var(--cian);
+  font-size: 14px;
+}
+
+.rejilla {
+  display: grid;
+  gap: 18px;
+}
+
+.rejilla--rutas,
+.rejilla--pasos {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tarjeta-ruta,
+.tarjeta-paso {
+  min-height: 230px;
+  padding: 24px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: linear-gradient(155deg, var(--superficie-clara), var(--superficie));
+}
+
+.tarjeta-ruta__numero,
+.tarjeta-paso__numero {
+  color: var(--cian);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.tarjeta-ruta h3,
+.tarjeta-paso h3 {
+  margin: 22px 0 8px;
+  font-size: 23px;
+}
+
+.tarjeta-ruta p:not(.tarjeta-ruta__numero),
+.tarjeta-paso p {
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+.tarjeta-ruta a,
+.tarjeta-paso a {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--verde-neon);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.preparacion {
+  margin-top: 24px;
+}
+
+.tarjeta-paso__numero {
+  color: var(--verde-neon);
+  font-size: 18px;
+}
+
+.llamada-final {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-block: 30px 64px;
+  padding: 36px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: linear-gradient(110deg, rgba(25, 231, 232, 0.08), rgba(213, 255, 0, 0.1));
+}
+
+.llamada-final p:not(.etiqueta) {
+  color: var(--texto-suave);
+}
+
+.pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 28px;
+  border-top: 1px solid var(--borde);
+}
+
+.pie__credito {
+  color: var(--texto-suave);
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .cabecera {
+    flex-wrap: wrap;
+    padding-block: 18px;
+  }
+
+  .navegacion {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .rejilla--rutas,
+  .rejilla--pasos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pie {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .cabecera,
+  main,
+  .pie {
+    width: min(100% - 32px, var(--ancho-contenido));
+  }
+
+  .cabecera > .boton {
+    min-height: 42px;
+    padding-inline: 14px;
+    font-size: 12px;
+  }
+
+  .navegacion {
+    justify-content: flex-start;
+    gap: 16px;
+    overflow-x: auto;
+  }
+
+  .navegacion a {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-block: 52px;
+  }
+
+  .hero__texto > p:not(.etiqueta) {
+    font-size: 16px;
+  }
+
+  .mapa-estatico {
+    min-height: 240px;
+    padding: 18px;
+  }
+
+  .seccion {
+    padding-block: 46px;
+  }
+
+  .seccion__encabezado,
+  .llamada-final {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .rejilla--rutas,
+  .rejilla--pasos {
+    grid-template-columns: 1fr;
+  }
+
+  .llamada-final {
+    padding: 24px;
+    margin-bottom: 42px;
+  }
+
+  .pie,
+  .pie__navegacion {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+}
