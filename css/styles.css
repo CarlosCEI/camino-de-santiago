@@ -524,3 +524,283 @@ main,
 .comparativa tbody tr:hover {
   background: rgba(25, 231, 232, 0.04);
 }
+
+.hero-etapas {
+  min-height: 380px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 48px;
+  padding-block: 64px;
+}
+
+.hero-etapas h1 {
+  margin: 0;
+  font-size: clamp(48px, 6vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.hero-etapas h1 span {
+  color: var(--verde-neon);
+}
+
+.hero-etapas > div > p:not(.etiqueta) {
+  max-width: 620px;
+  color: var(--texto-suave);
+  font-size: 17px;
+}
+
+.resumen-etapas,
+.datos-etapa {
+  padding: 26px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: linear-gradient(145deg, var(--superficie-clara), var(--superficie));
+}
+
+.resumen-etapas__etiqueta {
+  color: var(--cian);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.resumen-etapas h2 {
+  margin: 12px 0;
+  font-size: 26px;
+}
+
+.resumen-etapas p:not(.resumen-etapas__etiqueta) {
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+.selector-ruta {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr;
+  align-items: center;
+  gap: 28px;
+  padding: 26px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: var(--superficie);
+}
+
+.selector-ruta h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.selector-ruta__opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.selector-ruta__opcion {
+  padding: 10px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 7px;
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+.selector-ruta__opcion--activa {
+  color: #101500;
+  border-color: var(--verde-neon);
+  background: var(--verde-neon);
+  font-weight: 700;
+}
+
+.etapa-destacada {
+  margin-top: 28px;
+  padding: 32px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(16, 29, 34, 0.98), rgba(9, 19, 24, 0.98));
+}
+
+.etapa-destacada__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.etapa-destacada__cabecera h2 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 40px);
+}
+
+.etapa-destacada__cabecera p:not(.etiqueta) {
+  max-width: 760px;
+  color: var(--texto-suave);
+}
+
+.etapa-destacada__contenido {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 20px;
+}
+
+.perfil-desnivel {
+  padding: 22px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: #0a171c;
+}
+
+.perfil-desnivel__titulo {
+  margin: 0 0 18px;
+  color: var(--cian);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.perfil-desnivel__grafico {
+  height: 170px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(25, 231, 232, 0.45);
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 41px,
+    rgba(175, 220, 220, 0.08) 42px
+  );
+}
+
+.perfil-desnivel__grafico::before {
+  content: "";
+  position: absolute;
+  inset: 15% 0 0;
+  background: linear-gradient(180deg, rgba(25, 231, 232, 0.35), rgba(25, 231, 232, 0.02));
+  clip-path: polygon(0 45%, 12% 25%, 24% 38%, 38% 15%, 50% 30%, 64% 48%, 76% 40%, 88% 65%, 100% 55%, 100% 100%, 0 100%);
+}
+
+.perfil-desnivel__grafico::after {
+  content: "";
+  position: absolute;
+  inset: 15% 0 0;
+  background: var(--cian);
+  clip-path: polygon(0 44%, 12% 24%, 24% 37%, 38% 14%, 50% 29%, 64% 47%, 76% 39%, 88% 64%, 100% 54%, 100% 57%, 88% 67%, 76% 42%, 64% 50%, 50% 32%, 38% 17%, 24% 40%, 12% 27%, 0 47%);
+  filter: drop-shadow(0 0 5px var(--cian));
+}
+
+.perfil-desnivel .nota-interaccion {
+  margin-top: 14px;
+}
+
+.datos-etapa h3 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+.datos-etapa ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+.datos-etapa li + li {
+  margin-top: 12px;
+}
+
+.listado-etapas > .seccion__encabezado p {
+  max-width: 300px;
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+.lista-etapas {
+  display: grid;
+  gap: 12px;
+}
+
+.fila-etapa {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: var(--superficie);
+}
+
+.fila-etapa__numero {
+  color: var(--cian);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.fila-etapa h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+}
+
+.fila-etapa p {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+.fila-etapa__tipo {
+  padding: 6px 10px;
+  border: 1px solid rgba(213, 255, 0, 0.35);
+  border-radius: 20px;
+  color: var(--verde-neon);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.consejos-etapas {
+  padding-block: 64px;
+  border-top: 1px solid var(--borde);
+}
+
+.consejos-etapas h2 {
+  max-width: 760px;
+  margin: 0 0 28px;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.1;
+}
+
+@media (max-width: 850px) {
+  .hero-etapas,
+  .selector-ruta,
+  .etapa-destacada__contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .etapa-destacada__cabecera {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-etapas {
+    padding-block: 46px;
+  }
+
+  .selector-ruta,
+  .etapa-destacada {
+    padding: 20px;
+  }
+
+  .fila-etapa {
+    grid-template-columns: 34px 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .fila-etapa__tipo {
+    grid-column: 2;
+    justify-self: start;
+  }
+}

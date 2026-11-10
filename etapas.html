@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Consulta etapas del Camino de Santiago y organiza tu recorrido paso a paso."
+  >
+  <title>Etapas | Camino de Santiago</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="marca" href="index.html" aria-label="Camino de Santiago, inicio">
+      <span class="marca__simbolo" aria-hidden="true">✳</span>
+      <span class="marca__texto">
+        <strong>CAMINO DE SANTIAGO</strong>
+        <small>RUTAS · EXPERIENCIAS · PERSONAS</small>
+      </span>
+    </a>
+
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a href="rutas.html">Rutas</a>
+      <a href="etapas.html" aria-current="page">Etapas</a>
+      <a href="planifica.html">Planifica</a>
+      <a href="material.html">Material</a>
+    </nav>
+
+    <a class="boton boton--primario" href="planifica.html">
+      Planifica tu Camino <span aria-hidden="true">→</span>
+    </a>
+  </header>
+
+  <main id="contenido">
+    <section class="hero-etapas" aria-labelledby="titulo-principal">
+      <div>
+        <p class="etiqueta">Organiza tu recorrido</p>
+        <h1 id="titulo-principal">
+          El Camino,<br>
+          <span>etapa a etapa</span>
+        </h1>
+        <p>
+          Divide el recorrido en tramos, revisa qué encontrarás en cada uno
+          y adapta el plan a tu ritmo.
+        </p>
+      </div>
+
+      <aside class="resumen-etapas">
+        <p class="resumen-etapas__etiqueta">Ruta seleccionada</p>
+        <h2>Camino Francés</h2>
+        <p>Ejemplo de organización desde O Cebreiro hasta Santiago.</p>
+        <a class="enlace" href="rutas.html#frances">
+          Ver información de la ruta <span aria-hidden="true">→</span>
+        </a>
+      </aside>
+    </section>
+
+    <section class="selector-ruta" aria-labelledby="titulo-selector">
+      <div>
+        <p class="etiqueta">Personaliza la vista</p>
+        <h2 id="titulo-selector">Selecciona una ruta</h2>
+      </div>
+
+      <!-- Selector visual; el cambio de ruta se completará en la PEC 5. -->
+      <div class="selector-ruta__opciones" aria-label="Selector de rutas pendiente para la PEC 5">
+        <span class="selector-ruta__opcion selector-ruta__opcion--activa">Camino Francés</span>
+        <span class="selector-ruta__opcion">Camino Portugués</span>
+        <span class="selector-ruta__opcion">Camino Primitivo</span>
+        <span class="selector-ruta__opcion">Camino del Norte</span>
+      </div>
+    </section>
+
+    <section class="etapa-destacada" aria-labelledby="titulo-etapa-destacada">
+      <div class="etapa-destacada__cabecera">
+        <div>
+          <p class="etiqueta">Etapa destacada · Camino Francés</p>
+          <h2 id="titulo-etapa-destacada">O Cebreiro — Triacastela</h2>
+          <p>
+            Un tramo de montaña que atraviesa el paisaje rural de Os Ancares
+            y permite comenzar la etapa gallega del Camino.
+          </p>
+        </div>
+        <a class="boton boton--primario" href="planifica.html">
+          Añadir a mi plan <span aria-hidden="true">+</span>
+        </a>
+      </div>
+
+      <div class="etapa-destacada__contenido">
+        <div class="perfil-desnivel" role="img" aria-label="Espacio reservado para el perfil de desnivel de la etapa">
+          <p class="perfil-desnivel__titulo">Perfil del recorrido</p>
+          <div class="perfil-desnivel__grafico" aria-hidden="true">
+            <span class="perfil-desnivel__linea"></span>
+          </div>
+          <p class="nota-interaccion">
+            Gráfico orientativo; visualización detallada pendiente para la PEC 5.
+          </p>
+        </div>
+
+        <aside class="datos-etapa">
+          <h3>Antes de salir</h3>
+          <ul>
+            <li>Consulta la previsión meteorológica.</li>
+            <li>Comprueba los servicios disponibles en el trayecto.</li>
+            <li>Prepara agua y comida según la duración prevista.</li>
+            <li>Adapta el ritmo a tu condición física.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="seccion listado-etapas" aria-labelledby="titulo-listado">
+      <div class="seccion__encabezado">
+        <div>
+          <p class="etiqueta">Recorrido de ejemplo</p>
+          <h2 id="titulo-listado">Tramos hacia Santiago</h2>
+        </div>
+        <p>Consulta cada tramo y decide dónde hacer una pausa.</p>
+      </div>
+
+      <!-- Las filas podrán convertirse en paneles desplegables en la PEC 5. -->
+      <div class="lista-etapas">
+        <article class="fila-etapa">
+          <span class="fila-etapa__numero">01</span>
+          <div>
+            <h3>O Cebreiro — Triacastela</h3>
+            <p>Montaña, aldeas y primeras vistas del paisaje gallego.</p>
+          </div>
+          <span class="fila-etapa__tipo">Montaña</span>
+        </article>
+
+        <article class="fila-etapa">
+          <span class="fila-etapa__numero">02</span>
+          <div>
+            <h3>Triacastela — Sarria</h3>
+            <p>Un tramo rural con caminos entre bosques y pequeñas localidades.</p>
+          </div>
+          <span class="fila-etapa__tipo">Interior</span>
+        </article>
+
+        <article class="fila-etapa">
+          <span class="fila-etapa__numero">03</span>
+          <div>
+            <h3>Sarria — Portomarín</h3>
+            <p>Una etapa popular entre aldeas, caminos rurales y zonas arboladas.</p>
+          </div>
+          <span class="fila-etapa__tipo">Rural</span>
+        </article>
+
+        <article class="fila-etapa">
+          <span class="fila-etapa__numero">04</span>
+          <div>
+            <h3>Portomarín — Palas de Rei</h3>
+            <p>El recorrido avanza por el interior de Lugo hacia Palas de Rei.</p>
+          </div>
+          <span class="fila-etapa__tipo">Interior</span>
+        </article>
+
+        <article class="fila-etapa">
+          <span class="fila-etapa__numero">05</span>
+          <div>
+            <h3>Palas de Rei — Arzúa</h3>
+            <p>Una jornada por caminos rurales y localidades de la comarca.</p>
+          </div>
+          <span class="fila-etapa__tipo">Rural</span>
+        </article>
+
+        <article class="fila-etapa">
+          <span class="fila-etapa__numero">06</span>
+          <div>
+            <h3>Arzúa — O Pedrouzo</h3>
+            <p>El recorrido continúa hacia el entorno de Santiago de Compostela.</p>
+          </div>
+          <span class="fila-etapa__tipo">Interior</span>
+        </article>
+
+        <article class="fila-etapa">
+          <span class="fila-etapa__numero">07</span>
+          <div>
+            <h3>O Pedrouzo — Santiago</h3>
+            <p>Último tramo del ejemplo, con llegada a la plaza del Obradoiro.</p>
+          </div>
+          <span class="fila-etapa__tipo">Llegada</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="consejos-etapas" aria-labelledby="titulo-consejos">
+      <p class="etiqueta">Camina con previsión</p>
+      <h2 id="titulo-consejos">Un buen plan también deja espacio para cambiarlo</h2>
+
+      <div class="rejilla rejilla--pasos">
+        <article class="tarjeta-paso">
+          <span class="tarjeta-paso__numero">01</span>
+          <h3>Calcula tu ritmo</h3>
+          <p>Planifica distancias realistas y ten en cuenta el terreno de cada tramo.</p>
+        </article>
+
+        <article class="tarjeta-paso">
+          <span class="tarjeta-paso__numero">02</span>
+          <h3>Revisa los servicios</h3>
+          <p>Comprueba alojamientos, lugares para comer y puntos de agua antes de salir.</p>
+        </article>
+
+        <article class="tarjeta-paso">
+          <span class="tarjeta-paso__numero">03</span>
+          <h3>Consulta fuentes actuales</h3>
+          <p>Los horarios y servicios pueden cambiar; verifica la información antes del viaje.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="llamada-final" aria-labelledby="titulo-cta">
+      <div>
+        <p class="etiqueta">Tu recorrido, a tu manera</p>
+        <h2 id="titulo-cta">¿Quieres organizar tu plan?</h2>
+        <p>Elige una ruta y prepara las etapas que mejor se adapten a ti.</p>
+      </div>
+      <a class="boton boton--primario" href="planifica.html">
+        Crear mi planificación <span aria-hidden="true">→</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <a class="marca" href="index.html">
+      <span class="marca__simbolo" aria-hidden="true">✳</span>
+      <span class="marca__texto">
+        <strong>CAMINO DE SANTIAGO</strong>
+        <small>RUTAS · EXPERIENCIAS · PERSONAS</small>
+      </span>
+    </a>
+
+    <nav class="pie__navegacion" aria-label="Navegación del pie de página">
+      <a href="rutas.html">Rutas</a>
+      <a href="etapas.html" aria-current="page">Etapas</a>
+      <a href="planifica.html">Planifica</a>
+      <a href="material.html">Material</a>
+    </nav>
+
+    <p class="pie__credito">Proyecto académico · PEC 4 · Diseño Web</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
