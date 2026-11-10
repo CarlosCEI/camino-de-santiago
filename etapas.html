@@ -50,8 +50,10 @@
 
       <aside class="resumen-etapas">
         <p class="resumen-etapas__etiqueta">Ruta seleccionada</p>
-        <h2>Camino Francés</h2>
-        <p>Ejemplo de organización desde O Cebreiro hasta Santiago.</p>
+        <h2 data-ruta-titulo>Camino Francés</h2>
+        <p data-ruta-resumen>
+          Ejemplo de organización desde O Cebreiro hasta Santiago.
+        </p>
         <a class="enlace" href="rutas.html#frances">
           Ver información de la ruta <span aria-hidden="true">→</span>
         </a>
@@ -64,16 +66,51 @@
         <h2 id="titulo-selector">Selecciona una ruta</h2>
       </div>
 
-      <!-- Selector visual; el cambio de ruta se completará en la PEC 5. -->
-      <div class="selector-ruta__opciones" aria-label="Selector de rutas pendiente para la PEC 5">
-        <span class="selector-ruta__opcion selector-ruta__opcion--activa">Camino Francés</span>
-        <span class="selector-ruta__opcion">Camino Portugués</span>
-        <span class="selector-ruta__opcion">Camino Primitivo</span>
-        <span class="selector-ruta__opcion">Camino del Norte</span>
+      <div class="selector-ruta__opciones" role="group" aria-label="Seleccionar ruta">
+        <button
+          class="selector-ruta__opcion selector-ruta__opcion--activa"
+          type="button"
+          data-seleccionar-ruta="frances"
+          aria-pressed="true"
+        >
+          Camino Francés
+        </button>
+
+        <button
+          class="selector-ruta__opcion"
+          type="button"
+          data-seleccionar-ruta="portugues"
+          aria-pressed="false"
+        >
+          Camino Portugués
+        </button>
+
+        <button
+          class="selector-ruta__opcion"
+          type="button"
+          data-seleccionar-ruta="primitivo"
+          aria-pressed="false"
+        >
+          Camino Primitivo
+        </button>
+
+        <button
+          class="selector-ruta__opcion"
+          type="button"
+          data-seleccionar-ruta="norte"
+          aria-pressed="false"
+        >
+          Camino del Norte
+        </button>
       </div>
     </section>
 
-    <section class="etapa-destacada" aria-labelledby="titulo-etapa-destacada">
+    <section
+      class="etapa-destacada"
+      aria-labelledby="titulo-etapa-destacada"
+      data-etapa-destacada
+      data-ruta="frances"
+    >
       <div class="etapa-destacada__cabecera">
         <div>
           <p class="etiqueta">Etapa destacada · Camino Francés</p>
@@ -83,19 +120,24 @@
             y permite comenzar la etapa gallega del Camino.
           </p>
         </div>
+
         <a class="boton boton--primario" href="planifica.html">
           Añadir a mi plan <span aria-hidden="true">+</span>
         </a>
       </div>
 
       <div class="etapa-destacada__contenido">
-        <div class="perfil-desnivel" role="img" aria-label="Espacio reservado para el perfil de desnivel de la etapa">
+        <div
+          class="perfil-desnivel"
+          role="img"
+          aria-label="Perfil esquemático del desnivel de la etapa"
+        >
           <p class="perfil-desnivel__titulo">Perfil del recorrido</p>
           <div class="perfil-desnivel__grafico" aria-hidden="true">
             <span class="perfil-desnivel__linea"></span>
           </div>
           <p class="nota-interaccion">
-            Gráfico orientativo; visualización detallada pendiente para la PEC 5.
+            Perfil esquemático de la etapa.
           </p>
         </div>
 
@@ -120,9 +162,8 @@
         <p>Consulta cada tramo y decide dónde hacer una pausa.</p>
       </div>
 
-      <!-- Las filas podrán convertirse en paneles desplegables en la PEC 5. -->
       <div class="lista-etapas">
-        <article class="fila-etapa">
+        <article class="fila-etapa" data-ruta="frances">
           <span class="fila-etapa__numero">01</span>
           <div>
             <h3>O Cebreiro — Triacastela</h3>
@@ -131,7 +172,7 @@
           <span class="fila-etapa__tipo">Montaña</span>
         </article>
 
-        <article class="fila-etapa">
+        <article class="fila-etapa" data-ruta="frances">
           <span class="fila-etapa__numero">02</span>
           <div>
             <h3>Triacastela — Sarria</h3>
@@ -140,7 +181,7 @@
           <span class="fila-etapa__tipo">Interior</span>
         </article>
 
-        <article class="fila-etapa">
+        <article class="fila-etapa" data-ruta="frances">
           <span class="fila-etapa__numero">03</span>
           <div>
             <h3>Sarria — Portomarín</h3>
@@ -149,7 +190,7 @@
           <span class="fila-etapa__tipo">Rural</span>
         </article>
 
-        <article class="fila-etapa">
+        <article class="fila-etapa" data-ruta="frances">
           <span class="fila-etapa__numero">04</span>
           <div>
             <h3>Portomarín — Palas de Rei</h3>
@@ -158,7 +199,7 @@
           <span class="fila-etapa__tipo">Interior</span>
         </article>
 
-        <article class="fila-etapa">
+        <article class="fila-etapa" data-ruta="frances">
           <span class="fila-etapa__numero">05</span>
           <div>
             <h3>Palas de Rei — Arzúa</h3>
@@ -167,7 +208,7 @@
           <span class="fila-etapa__tipo">Rural</span>
         </article>
 
-        <article class="fila-etapa">
+        <article class="fila-etapa" data-ruta="frances">
           <span class="fila-etapa__numero">06</span>
           <div>
             <h3>Arzúa — O Pedrouzo</h3>
@@ -176,7 +217,7 @@
           <span class="fila-etapa__tipo">Interior</span>
         </article>
 
-        <article class="fila-etapa">
+        <article class="fila-etapa" data-ruta="frances">
           <span class="fila-etapa__numero">07</span>
           <div>
             <h3>O Pedrouzo — Santiago</h3>
@@ -189,25 +230,33 @@
 
     <section class="consejos-etapas" aria-labelledby="titulo-consejos">
       <p class="etiqueta">Camina con previsión</p>
-      <h2 id="titulo-consejos">Un buen plan también deja espacio para cambiarlo</h2>
+      <h2 id="titulo-consejos">
+        Un buen plan también deja espacio para cambiarlo
+      </h2>
 
       <div class="rejilla rejilla--pasos">
         <article class="tarjeta-paso">
           <span class="tarjeta-paso__numero">01</span>
           <h3>Calcula tu ritmo</h3>
-          <p>Planifica distancias realistas y ten en cuenta el terreno de cada tramo.</p>
+          <p>
+            Planifica distancias realistas y ten en cuenta el terreno de cada tramo.
+          </p>
         </article>
 
         <article class="tarjeta-paso">
           <span class="tarjeta-paso__numero">02</span>
           <h3>Revisa los servicios</h3>
-          <p>Comprueba alojamientos, lugares para comer y puntos de agua antes de salir.</p>
+          <p>
+            Comprueba alojamientos, lugares para comer y puntos de agua antes de salir.
+          </p>
         </article>
 
         <article class="tarjeta-paso">
           <span class="tarjeta-paso__numero">03</span>
           <h3>Consulta fuentes actuales</h3>
-          <p>Los horarios y servicios pueden cambiar; verifica la información antes del viaje.</p>
+          <p>
+            Los horarios y servicios pueden cambiar; verifica la información antes del viaje.
+          </p>
         </article>
       </div>
     </section>
@@ -218,6 +267,7 @@
         <h2 id="titulo-cta">¿Quieres organizar tu plan?</h2>
         <p>Elige una ruta y prepara las etapas que mejor se adapten a ti.</p>
       </div>
+
       <a class="boton boton--primario" href="planifica.html">
         Crear mi planificación <span aria-hidden="true">→</span>
       </a>
@@ -243,6 +293,15 @@
     <p class="pie__credito">Proyecto académico · PEC 4 · Diseño Web</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
