@@ -55,11 +55,17 @@
           La propuesta te ayudará a ordenar ideas. Comprueba siempre distancias,
           alojamientos y servicios antes de iniciar el viaje.
         </p>
-        <a class="enlace" href="etapas.html">Consultar etapas <span aria-hidden="true">→</span></a>
+        <a class="enlace" href="etapas.html">
+          Consultar etapas <span aria-hidden="true">→</span>
+        </a>
       </aside>
     </section>
 
-    <section class="planificador" id="planificador" aria-labelledby="titulo-planificador">
+    <section
+      class="planificador"
+      id="planificador"
+      aria-labelledby="titulo-planificador"
+    >
       <div class="planificador__cabecera">
         <div>
           <p class="etiqueta">Planificador de viaje</p>
@@ -68,8 +74,7 @@
         <p>Elige tus preferencias para organizar el recorrido.</p>
       </div>
 
-      <!-- La generación automática de la planificación se completará en la PEC 5. -->
-      <form class="formulario-plan">
+      <form class="formulario-plan" id="formulario-plan">
         <div class="campo-plan">
           <label for="ruta">Ruta</label>
           <select id="ruta" name="ruta">
@@ -82,7 +87,7 @@
 
         <div class="campo-plan">
           <label for="duracion">Días disponibles</label>
-          <select id="duracion" name="duracion">
+          <select id="duracion" name="duracion" required>
             <option value="">Selecciona una opción</option>
             <option value="7">Una semana</option>
             <option value="14">Dos semanas</option>
@@ -92,9 +97,9 @@
         </div>
 
         <div class="campo-plan">
-          <label for="mes">Mes aproximado</label>
-          <select id="mes" name="mes">
-            <option value="">Selecciona un mes</option>
+          <label for="mes">Época aproximada</label>
+          <select id="mes" name="mes" required>
+            <option value="">Selecciona una época</option>
             <option value="primavera">Primavera</option>
             <option value="verano">Verano</option>
             <option value="otono">Otoño</option>
@@ -102,25 +107,28 @@
           </select>
         </div>
 
-        <button class="boton boton--primario" type="button">
+        <button class="boton boton--primario" type="submit">
           Crear mi planificación <span aria-hidden="true">→</span>
         </button>
       </form>
 
-      <p class="nota-interaccion">
-        El botón todavía no genera un plan; esta interacción se desarrollará en la PEC 5.
-      </p>
-
-      <div class="vista-plan" aria-labelledby="titulo-vista-plan">
+      <div
+        class="vista-plan"
+        id="resultado-plan"
+        aria-labelledby="titulo-vista-plan"
+        aria-live="polite"
+      >
         <div class="vista-plan__encabezado">
           <div>
-            <p class="etiqueta">Vista previa estática</p>
-            <h3 id="titulo-vista-plan">Ejemplo de recorrido · Camino Francés</h3>
+            <p class="etiqueta">Propuesta de ejemplo</p>
+            <h3 id="titulo-vista-plan" data-titulo-plan>
+              Ejemplo de recorrido · Camino Francés
+            </h3>
           </div>
-          <span class="estado-plan">Plan orientativo</span>
+          <span class="estado-plan" data-estado-plan>Plan orientativo</span>
         </div>
 
-        <div class="rejilla rejilla--tramos">
+        <div class="rejilla rejilla--tramos" data-tramos-plan>
           <article class="tramo-plan">
             <span class="tramo-plan__dia">TRAMO 01</span>
             <h4>O Cebreiro — Triacastela</h4>
@@ -139,6 +147,11 @@
             <p>Organiza el agua, la comida y el ritmo de la jornada.</p>
           </article>
         </div>
+
+        <p class="nota-interaccion" data-mensaje-plan>
+          La planificación es orientativa. Verifica distancias, alojamientos
+          y servicios con fuentes actualizadas antes del viaje.
+        </p>
       </div>
     </section>
 
@@ -151,7 +164,6 @@
         <p>Usa esta guía como recordatorio y adapta cada punto a tu situación.</p>
       </div>
 
-      <!-- Las listas desplegables se podrán convertir en acordeones en la PEC 5. -->
       <div class="rejilla rejilla--preparacion">
         <article class="bloque-preparacion">
           <span class="bloque-preparacion__numero">01</span>
@@ -161,7 +173,6 @@
             <li>Información sobre la credencial del peregrino.</li>
             <li>Reservas y datos de contacto importantes.</li>
           </ul>
-          <p class="nota-interaccion">Panel desplegable pendiente para la PEC 5.</p>
         </article>
 
         <article class="bloque-preparacion">
@@ -172,7 +183,6 @@
             <li>Botiquín personal básico.</li>
             <li>Teléfonos útiles y plan de emergencia.</li>
           </ul>
-          <p class="nota-interaccion">Panel desplegable pendiente para la PEC 5.</p>
         </article>
 
         <article class="bloque-preparacion">
@@ -183,7 +193,9 @@
             <li>Ropa adecuada a la época del año.</li>
             <li>Agua y protección frente al clima.</li>
           </ul>
-          <a href="material.html">Consultar material <span aria-hidden="true">→</span></a>
+          <a href="material.html">
+            Consultar material <span aria-hidden="true">→</span>
+          </a>
         </article>
       </div>
     </section>
@@ -196,19 +208,25 @@
         <article class="tarjeta-paso">
           <span class="tarjeta-paso__numero">01</span>
           <h3>Comprueba la información</h3>
-          <p>Confirma horarios, alojamientos y servicios con fuentes actualizadas.</p>
+          <p>
+            Confirma horarios, alojamientos y servicios con fuentes actualizadas.
+          </p>
         </article>
 
         <article class="tarjeta-paso">
           <span class="tarjeta-paso__numero">02</span>
           <h3>Planifica descansos</h3>
-          <p>Incluye pausas y evita organizar jornadas que no se ajusten a tu ritmo.</p>
+          <p>
+            Incluye pausas y evita organizar jornadas que no se ajusten a tu ritmo.
+          </p>
         </article>
 
         <article class="tarjeta-paso">
           <span class="tarjeta-paso__numero">03</span>
           <h3>Adapta el plan</h3>
-          <p>El recorrido puede cambiar; deja margen para tomar decisiones sobre la marcha.</p>
+          <p>
+            El recorrido puede cambiar; deja margen para tomar decisiones sobre la marcha.
+          </p>
         </article>
       </div>
     </section>
@@ -219,6 +237,7 @@
         <h2 id="titulo-cta">El siguiente paso es elegir tu ruta</h2>
         <p>Explora las opciones y empieza a organizar tu recorrido.</p>
       </div>
+
       <a class="boton boton--primario" href="rutas.html">
         Comparar rutas <span aria-hidden="true">→</span>
       </a>
@@ -244,6 +263,15 @@
     <p class="pie__credito">Proyecto académico · PEC 4 · Diseño Web</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
