@@ -63,7 +63,11 @@
       <a href="#calzado">03 · Calzado</a>
     </nav>
 
-    <section class="seccion categoria-material" id="mochilas" aria-labelledby="titulo-mochilas">
+    <section
+      class="seccion categoria-material"
+      id="mochilas"
+      aria-labelledby="titulo-mochilas"
+    >
       <div class="seccion__encabezado">
         <div>
           <p class="etiqueta">01 / Mochilas técnicas</p>
@@ -72,71 +76,127 @@
         <p>Cinco modelos de referencia para comparar capacidades y diseños.</p>
       </div>
 
-      <!-- Carrusel horizontal y giro 3D pendientes para la PEC 5. -->
       <div class="productos-carrusel">
-        <div class="productos-carrusel__controles" aria-label="Controles del carrusel pendientes para la PEC 5">
-          <span aria-hidden="true">←</span>
-          <span>Desliza para explorar</span>
-          <span aria-hidden="true">→</span>
+        <div class="productos-carrusel__controles">
+          <button
+            class="productos-carrusel__boton"
+            type="button"
+            data-carrusel-mover="anterior"
+            aria-label="Mostrar mochilas anteriores"
+            aria-controls="lista-mochilas"
+          >
+            <span aria-hidden="true">←</span>
+          </button>
+          <span>Desliza o usa las flechas para explorar</span>
+          <button
+            class="productos-carrusel__boton"
+            type="button"
+            data-carrusel-mover="siguiente"
+            aria-label="Mostrar más mochilas"
+            aria-controls="lista-mochilas"
+          >
+            <span aria-hidden="true">→</span>
+          </button>
         </div>
 
-        <div class="productos-carrusel__lista">
+        <div
+          class="productos-carrusel__lista"
+          id="lista-mochilas"
+          role="region"
+          aria-label="Mochilas recomendadas"
+          tabindex="0"
+        >
           <article class="producto-card">
-            <div class="producto-card__visual" role="img" aria-label="Espacio para la imagen de la mochila Osprey Exos 48">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual"
+              data-producto-3d="mochila"
+              role="img"
+              aria-label="Modelo 3D giratorio de la mochila Osprey Exos 48"
+            ></div>
             <p class="producto-card__categoria">MOCHILA · OSPREY</p>
             <h3>Exos 48</h3>
             <p>Modelo de 48 litros de la gama Exos para travesías.</p>
-            <a href="https://www.osprey.com/es/destacado/comprar-por-colecciones/serie-exos-eja" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.osprey.com/es/destacado/comprar-por-colecciones/serie-exos-eja"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en Osprey <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="producto-card">
-            <div class="producto-card__visual" role="img" aria-label="Espacio para la imagen de la mochila Osprey Atmos AG LT 50">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual"
+              data-producto-3d="mochila"
+              role="img"
+              aria-label="Modelo 3D giratorio de la mochila Osprey Atmos AG LT 50"
+            ></div>
             <p class="producto-card__categoria">MOCHILA · OSPREY</p>
             <h3>Atmos AG LT 50</h3>
             <p>Una opción de 50 litros dentro de la colección Atmos.</p>
-            <a href="https://www.osprey.com/es/destacado/comprar-por-colecciones/serie-atmos-aura-ag" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.osprey.com/es/destacado/comprar-por-colecciones/serie-atmos-aura-ag"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en Osprey <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="producto-card">
-            <div class="producto-card__visual" role="img" aria-label="Espacio para la imagen de la mochila deuter Futura Pro 40">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual"
+              data-producto-3d="mochila"
+              role="img"
+              aria-label="Modelo 3D giratorio de la mochila Deuter Futura Pro 40"
+            ></div>
             <p class="producto-card__categoria">MOCHILA · DEUTER</p>
             <h3>Futura Pro 40</h3>
             <p>Mochila de senderismo con capacidad de 40 litros.</p>
-            <a href="https://www.deuter.com/es-es/futura-pro-40/4046051185484" target="_blank" rel="noopener noreferrer">
-              Ver en deuter <span aria-hidden="true">↗</span>
+            <a
+              href="https://www.deuter.com/es-es/futura-pro-40/4046051185484"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver en Deuter <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="producto-card">
-            <div class="producto-card__visual" role="img" aria-label="Espacio para la imagen de la mochila deuter Futura Air Trek 45 más 10">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual"
+              data-producto-3d="mochila"
+              role="img"
+              aria-label="Modelo 3D giratorio de la mochila Deuter Futura Air Trek 45 más 10"
+            ></div>
             <p class="producto-card__categoria">MOCHILA · DEUTER</p>
             <h3>Futura Air Trek 45+10 SL</h3>
             <p>Modelo extensible de la familia Futura Air Trek.</p>
-            <a href="https://www.deuter.com/es-es/mochilas/backpacks-40-liters/" target="_blank" rel="noopener noreferrer">
-              Ver en deuter <span aria-hidden="true">↗</span>
+            <a
+              href="https://www.deuter.com/es-es/mochilas/backpacks-40-liters/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver en Deuter <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="producto-card">
-            <div class="producto-card__visual" role="img" aria-label="Espacio para la imagen de la mochila Simond MT500 Air">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual"
+              data-producto-3d="mochila"
+              role="img"
+              aria-label="Modelo 3D giratorio de la mochila Simond MT500 Air"
+            ></div>
             <p class="producto-card__categoria">MOCHILA · SIMOND</p>
             <h3>MT500 AIR 50+10 L</h3>
-            <p>Modelo de trekking con capacidad ampliable de 50+10 litros.</p>
-            <a href="https://www.decathlon.es/es/p/mochila-de-trekking-hombre-50-10l-mt500-air/324407/c33c382m8978313" target="_blank" rel="noopener noreferrer">
+            <p>Mochila de trekking con capacidad ampliable de 50+10 litros.</p>
+            <a
+              href="https://www.decathlon.es/es/p/mochila-de-trekking-hombre-50-10l-mt500-air/324407/c33c382m8978313"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en Decathlon <span aria-hidden="true">↗</span>
             </a>
           </article>
@@ -144,7 +204,11 @@
       </div>
     </section>
 
-    <section class="seccion categoria-material" id="hidratacion" aria-labelledby="titulo-hidratacion">
+    <section
+      class="seccion categoria-material"
+      id="hidratacion"
+      aria-labelledby="titulo-hidratacion"
+    >
       <div class="seccion__encabezado">
         <div>
           <p class="etiqueta">02 / Sistemas de hidratación</p>
@@ -153,71 +217,127 @@
         <p>Botellas y recipientes con distintos formatos y materiales.</p>
       </div>
 
-      <!-- Carrusel horizontal y giro 3D pendientes para la PEC 5. -->
       <div class="productos-carrusel">
-        <div class="productos-carrusel__controles" aria-label="Controles del carrusel pendientes para la PEC 5">
-          <span aria-hidden="true">←</span>
-          <span>Desliza para explorar</span>
-          <span aria-hidden="true">→</span>
+        <div class="productos-carrusel__controles">
+          <button
+            class="productos-carrusel__boton"
+            type="button"
+            data-carrusel-mover="anterior"
+            aria-label="Mostrar productos de hidratación anteriores"
+            aria-controls="lista-hidratacion"
+          >
+            <span aria-hidden="true">←</span>
+          </button>
+          <span>Desliza o usa las flechas para explorar</span>
+          <button
+            class="productos-carrusel__boton"
+            type="button"
+            data-carrusel-mover="siguiente"
+            aria-label="Mostrar más productos de hidratación"
+            aria-controls="lista-hidratacion"
+          >
+            <span aria-hidden="true">→</span>
+          </button>
         </div>
 
-        <div class="productos-carrusel__lista">
+        <div
+          class="productos-carrusel__lista"
+          id="lista-hidratacion"
+          role="region"
+          aria-label="Productos de hidratación recomendados"
+          tabindex="0"
+        >
           <article class="producto-card">
-            <div class="producto-card__visual producto-card__visual--botella" role="img" aria-label="Espacio para la imagen de la botella Nalgene Wide Mouth">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual producto-card__visual--botella"
+              data-producto-3d="botella"
+              role="img"
+              aria-label="Modelo 3D giratorio de la botella Nalgene Wide Mouth"
+            ></div>
             <p class="producto-card__categoria">BOTELLA · NALGENE</p>
             <h3>32 oz Wide Mouth</h3>
             <p>Botella reutilizable de boca ancha para actividades al aire libre.</p>
-            <a href="https://nalgene.com/water-bottles/wide-mouth/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://nalgene.com/water-bottles/wide-mouth/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en Nalgene <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="producto-card">
-            <div class="producto-card__visual producto-card__visual--botella" role="img" aria-label="Espacio para la imagen de la botella Hydro Flask Wide Mouth">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual producto-card__visual--botella"
+              data-producto-3d="botella"
+              role="img"
+              aria-label="Modelo 3D giratorio de la botella Hydro Flask Wide Mouth"
+            ></div>
             <p class="producto-card__categoria">BOTELLA · HYDRO FLASK</p>
             <h3>32 oz Wide Mouth</h3>
             <p>Botella de acero inoxidable con aislamiento térmico.</p>
-            <a href="https://www.hydroflask.com/32-oz-wide-mouth?color=Oat" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.hydroflask.com/32-oz-wide-mouth?color=Oat"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en Hydro Flask <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="producto-card">
-            <div class="producto-card__visual producto-card__visual--botella" role="img" aria-label="Espacio para la imagen de la botella CamelBak Chute Mag">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual producto-card__visual--botella"
+              data-producto-3d="botella"
+              role="img"
+              aria-label="Modelo 3D giratorio de la botella CamelBak Chute Mag"
+            ></div>
             <p class="producto-card__categoria">BOTELLA · CAMELBAK</p>
             <h3>Chute Mag 32 oz</h3>
             <p>Botella con tapón magnético y asa de transporte.</p>
-            <a href="https://www.camelbak.com/product/chute-mag-32oz%2C-charcoal/CB-2469001001.html" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.camelbak.com/product/chute-mag-32oz%2C-charcoal/CB-2469001001.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en CamelBak <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="producto-card">
-            <div class="producto-card__visual producto-card__visual--botella" role="img" aria-label="Espacio para la imagen de la botella CamelBak Thrive Chug">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual producto-card__visual--botella"
+              data-producto-3d="botella"
+              role="img"
+              aria-label="Modelo 3D giratorio de la botella CamelBak Thrive Chug"
+            ></div>
             <p class="producto-card__categoria">BOTELLA · CAMELBAK</p>
             <h3>Thrive Chug 32 oz</h3>
             <p>Botella aislante de acero inoxidable con tapa hermética.</p>
-            <a href="https://www.camelbak.com/product/thrive-chug-vss-32oz%2C-navy/CB-2930401001.html" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.camelbak.com/product/thrive-chug-vss-32oz%2C-navy/CB-2930401001.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en CamelBak <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="producto-card">
-            <div class="producto-card__visual producto-card__visual--botella" role="img" aria-label="Espacio para la imagen de la botella flexible HydraPak Flux">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual producto-card__visual--botella"
+              data-producto-3d="botella"
+              role="img"
+              aria-label="Modelo 3D giratorio de la botella flexible HydraPak Flux"
+            ></div>
             <p class="producto-card__categoria">BOTELLA FLEXIBLE · HYDRAPAK</p>
             <h3>Flux 1.5 L</h3>
             <p>Recipiente reutilizable flexible de 1,5 litros.</p>
-            <a href="https://www.hydrapak.com/products/flux%E2%84%A2-1-5l" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.hydrapak.com/products/flux%E2%84%A2-1-5l"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en HydraPak <span aria-hidden="true">↗</span>
             </a>
           </article>
@@ -225,7 +345,11 @@
       </div>
     </section>
 
-    <section class="seccion categoria-material" id="calzado" aria-labelledby="titulo-calzado">
+    <section
+      class="seccion categoria-material"
+      id="calzado"
+      aria-labelledby="titulo-calzado"
+    >
       <div class="seccion__encabezado">
         <div>
           <p class="etiqueta">03 / Calzado de larga distancia</p>
@@ -234,71 +358,127 @@
         <p>Modelos de senderismo para comparar antes de probar tu talla.</p>
       </div>
 
-      <!-- Carrusel horizontal y giro 3D pendientes para la PEC 5. -->
       <div class="productos-carrusel">
-        <div class="productos-carrusel__controles" aria-label="Controles del carrusel pendientes para la PEC 5">
-          <span aria-hidden="true">←</span>
-          <span>Desliza para explorar</span>
-          <span aria-hidden="true">→</span>
+        <div class="productos-carrusel__controles">
+          <button
+            class="productos-carrusel__boton"
+            type="button"
+            data-carrusel-mover="anterior"
+            aria-label="Mostrar calzado anterior"
+            aria-controls="lista-calzado"
+          >
+            <span aria-hidden="true">←</span>
+          </button>
+          <span>Desliza o usa las flechas para explorar</span>
+          <button
+            class="productos-carrusel__boton"
+            type="button"
+            data-carrusel-mover="siguiente"
+            aria-label="Mostrar más calzado"
+            aria-controls="lista-calzado"
+          >
+            <span aria-hidden="true">→</span>
+          </button>
         </div>
 
-        <div class="productos-carrusel__lista">
+        <div
+          class="productos-carrusel__lista"
+          id="lista-calzado"
+          role="region"
+          aria-label="Calzado recomendado"
+          tabindex="0"
+        >
           <article class="producto-card">
-            <div class="producto-card__visual producto-card__visual--calzado" role="img" aria-label="Espacio para la imagen de las botas Salomon X Ultra 5 Mid Gore-Tex">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual producto-card__visual--calzado"
+              data-producto-3d="calzado"
+              role="img"
+              aria-label="Modelo 3D giratorio de las botas Salomon X Ultra 5 Mid Gore-Tex"
+            ></div>
             <p class="producto-card__categoria">CALZADO · SALOMON</p>
             <h3>X Ultra 5 Mid GORE-TEX</h3>
             <p>Bota de media altura para senderismo y excursionismo.</p>
-            <a href="https://www.salomon.com/es-es/product/x-ultra-5-mid-gore-tex-li6287/L47754200" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.salomon.com/es-es/product/x-ultra-5-mid-gore-tex-li6287/L47754200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en Salomon <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="producto-card">
-            <div class="producto-card__visual producto-card__visual--calzado" role="img" aria-label="Espacio para la imagen de las botas Merrell Moab 3 Mid Gore-Tex">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual producto-card__visual--calzado"
+              data-producto-3d="calzado"
+              role="img"
+              aria-label="Modelo 3D giratorio de las botas Merrell Moab 3 Mid Gore-Tex"
+            ></div>
             <p class="producto-card__categoria">CALZADO · MERRELL</p>
             <h3>Moab 3 Mid GORE-TEX</h3>
             <p>Bota de senderismo con membrana impermeable GORE-TEX.</p>
-            <a href="https://www.merrell.com/UK/en_GB/moab-3-mid-gore-tex/60279M.html" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.merrell.com/UK/en_GB/moab-3-mid-gore-tex/60279M.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en Merrell <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="producto-card">
-            <div class="producto-card__visual producto-card__visual--calzado" role="img" aria-label="Espacio para la imagen de las botas LOWA Renegade GTX Mid">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual producto-card__visual--calzado"
+              data-producto-3d="calzado"
+              role="img"
+              aria-label="Modelo 3D giratorio de las botas LOWA Renegade GTX Mid"
+            ></div>
             <p class="producto-card__categoria">CALZADO · LOWA</p>
             <h3>Renegade GTX Mid</h3>
             <p>Modelo de media altura de la línea Renegade.</p>
-            <a href="https://lowa.com/en/renegade-gtx-mid" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://lowa.com/en/renegade-gtx-mid"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en LOWA <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="producto-card">
-            <div class="producto-card__visual producto-card__visual--calzado" role="img" aria-label="Espacio para la imagen del calzado adidas Terrex Trailmaker 2 GORE-TEX">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual producto-card__visual--calzado"
+              data-producto-3d="calzado"
+              role="img"
+              aria-label="Modelo 3D giratorio del calzado adidas Terrex Trailmaker 2 Gore-Tex"
+            ></div>
             <p class="producto-card__categoria">CALZADO · ADIDAS TERREX</p>
             <h3>Trailmaker 2 GORE-TEX</h3>
             <p>Calzado de senderismo con membrana GORE-TEX.</p>
-            <a href="https://www.adidas.es/zapatilla-terrex-trailmaker-2-gore-tex-speed-lace-hiking/JR6573.html" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.adidas.es/zapatilla-terrex-trailmaker-2-gore-tex-speed-lace-hiking/JR6573.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en adidas <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="producto-card">
-            <div class="producto-card__visual producto-card__visual--calzado" role="img" aria-label="Espacio para la imagen del calzado adidas Terrex Free Hiker 2 GTX">
-              <span>VISTA 3D PENDIENTE</span>
-            </div>
+            <div
+              class="producto-card__visual producto-card__visual--calzado"
+              data-producto-3d="calzado"
+              role="img"
+              aria-label="Modelo 3D giratorio del calzado adidas Terrex Free Hiker 2 GTX"
+            ></div>
             <p class="producto-card__categoria">CALZADO · ADIDAS TERREX</p>
             <h3>Free Hiker 2 GTX</h3>
             <p>Calzado de senderismo de la familia Terrex Free Hiker.</p>
-            <a href="https://www.adidas.es/zapatilla-de-senderismo-terrex-free-hiker-2-gtx-climawarm_/KI8658.html" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.adidas.es/zapatilla-de-senderismo-terrex-free-hiker-2-gtx-climawarm_/KI8658.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver en adidas <span aria-hidden="true">↗</span>
             </a>
           </article>
@@ -337,6 +517,15 @@
     <p class="pie__credito">Proyecto académico · PEC 4 · Diseño Web</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
