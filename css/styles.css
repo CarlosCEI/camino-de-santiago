@@ -29,12 +29,28 @@ body {
   line-height: 1.6;
 }
 
+button,
+select {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+[tabindex="0"]:focus-visible {
   outline: 3px solid var(--cian);
   outline-offset: 4px;
 }
@@ -43,7 +59,7 @@ a:focus-visible {
   position: absolute;
   top: -60px;
   left: 16px;
-  z-index: 10;
+  z-index: 100;
   padding: 10px 14px;
   color: var(--fondo);
   background: var(--verde-neon);
@@ -113,7 +129,9 @@ main,
 }
 
 .navegacion a:hover,
-.pie__navegacion a:hover {
+.navegacion a[aria-current="page"],
+.pie__navegacion a:hover,
+.pie__navegacion a[aria-current="page"] {
   color: var(--cian);
 }
 
@@ -127,6 +145,7 @@ main,
   border: 1px solid transparent;
   border-radius: 8px;
   font-weight: 700;
+  cursor: pointer;
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
@@ -144,15 +163,6 @@ main,
   box-shadow: 0 0 28px rgba(213, 255, 0, 0.32);
 }
 
-.hero {
-  min-height: 570px;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  align-items: center;
-  gap: 56px;
-  padding-block: 64px;
-}
-
 .etiqueta {
   margin: 0 0 14px;
   color: var(--cian);
@@ -160,6 +170,15 @@ main,
   font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
+}
+
+.hero {
+  min-height: 570px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 56px;
+  padding-block: 64px;
 }
 
 .hero h1 {
@@ -224,9 +243,9 @@ main,
   position: absolute;
   top: 49%;
   left: 15%;
+  z-index: 1;
   width: 70%;
   height: 4px;
-  z-index: 1;
   border-radius: 50%;
   background: linear-gradient(90deg, var(--cian), var(--verde-neon));
   box-shadow: 0 0 16px var(--verde-neon);
@@ -370,99 +389,7 @@ main,
   font-size: 12px;
 }
 
-@media (max-width: 900px) {
-  .cabecera {
-    flex-wrap: wrap;
-    padding-block: 18px;
-  }
-
-  .navegacion {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: 18px;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 34px;
-  }
-
-  .rejilla--rutas,
-  .rejilla--pasos {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .pie {
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 600px) {
-  .cabecera,
-  main,
-  .pie {
-    width: min(100% - 32px, var(--ancho-contenido));
-  }
-
-  .cabecera > .boton {
-    min-height: 42px;
-    padding-inline: 14px;
-    font-size: 12px;
-  }
-
-  .navegacion {
-    justify-content: flex-start;
-    gap: 16px;
-    overflow-x: auto;
-  }
-
-  .navegacion a {
-    font-size: 12px;
-  }
-
-  .hero {
-    min-height: auto;
-    padding-block: 52px;
-  }
-
-  .hero__texto > p:not(.etiqueta) {
-    font-size: 16px;
-  }
-
-  .mapa-estatico {
-    min-height: 240px;
-    padding: 18px;
-  }
-
-  .seccion {
-    padding-block: 46px;
-  }
-
-  .seccion__encabezado,
-  .llamada-final {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .rejilla--rutas,
-  .rejilla--pasos {
-    grid-template-columns: 1fr;
-  }
-
-  .llamada-final {
-    padding: 24px;
-    margin-bottom: 42px;
-  }
-
-  .pie,
-  .pie__navegacion {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 14px;
-  }
-}
-
+/* Comparativa de rutas */
 .comparativa {
   padding: 72px clamp(20px, 4vw, 56px);
 }
@@ -491,10 +418,10 @@ main,
 .comparativa th,
 .comparativa td {
   padding: 20px 24px;
+  border-bottom: 1px solid var(--borde);
   text-align: left;
   vertical-align: top;
   line-height: 1.6;
-  border-bottom: 1px solid var(--borde);
 }
 
 .comparativa thead th {
@@ -525,6 +452,162 @@ main,
   background: rgba(25, 231, 232, 0.04);
 }
 
+/* Página de rutas */
+.hero-rutas {
+  min-height: 350px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  align-items: center;
+  gap: 48px;
+  padding-block: 60px;
+}
+
+.hero-rutas h1 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(48px, 6vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.hero-rutas > div > p:not(.etiqueta) {
+  max-width: 680px;
+  color: var(--texto-suave);
+  font-size: 17px;
+}
+
+.panel-consejo {
+  padding: 26px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: linear-gradient(145deg, var(--superficie-clara), var(--superficie));
+}
+
+.panel-consejo__etiqueta {
+  margin: 0;
+  color: var(--cian);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.panel-consejo h2 {
+  margin: 12px 0;
+  font-size: 25px;
+}
+
+.panel-consejo p:not(.panel-consejo__etiqueta) {
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+.mapa-rutas {
+  padding-block: 44px 58px;
+  border-top: 1px solid var(--borde);
+}
+
+.mapa-rutas .seccion__encabezado > p {
+  max-width: 300px;
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+/* Mapas Three.js */
+.mapa-3d {
+  min-height: 340px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(25, 231, 232, 0.3);
+  border-radius: 14px;
+  background:
+    radial-gradient(ellipse at 50% 55%, rgba(25, 231, 232, 0.14), transparent 65%),
+    linear-gradient(145deg, #0c2026, #071116 70%);
+  box-shadow:
+    inset 0 0 50px rgba(25, 231, 232, 0.06),
+    0 22px 55px rgba(0, 0, 0, 0.28);
+}
+
+.mapa-3d::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(7, 17, 22, 0.4), transparent 22%, transparent 78%, rgba(7, 17, 22, 0.4)),
+    linear-gradient(0deg, rgba(7, 17, 22, 0.3), transparent 24%, transparent 80%, rgba(7, 17, 22, 0.25));
+}
+
+.mapa-3d__canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.mapa-3d--inicio {
+  min-height: 380px;
+}
+
+.mapa-3d--rutas {
+  min-height: 420px;
+}
+
+.mapa-3d__etiqueta,
+.mapa-3d__ayuda {
+  position: absolute;
+  z-index: 2;
+  padding: 7px 10px;
+  border: 1px solid rgba(25, 231, 232, 0.55);
+  border-radius: 5px;
+  color: var(--cian);
+  background: rgba(7, 17, 22, 0.82);
+  box-shadow: 0 0 18px rgba(25, 231, 232, 0.08);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  pointer-events: none;
+}
+
+.mapa-3d__etiqueta--origen {
+  top: 18px;
+  left: 18px;
+}
+
+.mapa-3d__etiqueta--destino {
+  top: 18px;
+  right: 18px;
+  color: var(--verde-neon);
+  border-color: rgba(213, 255, 0, 0.6);
+}
+
+.mapa-3d__ayuda {
+  right: 16px;
+  bottom: 14px;
+  color: var(--texto-suave);
+  border-color: var(--borde);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.mapa-3d--sin-webgl::after {
+  content: "Activa la aceleración gráfica del navegador para ver el mapa 3D.";
+  position: absolute;
+  inset: auto 16px 54px;
+  z-index: 3;
+  padding: 10px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  color: var(--texto);
+  background: rgba(7, 17, 22, 0.92);
+  font-size: 12px;
+}
+
+/* Etapas */
 .hero-etapas {
   min-height: 380px;
   display: grid;
@@ -604,7 +687,15 @@ main,
   border: 1px solid var(--borde);
   border-radius: 7px;
   color: var(--texto-suave);
+  background: transparent;
   font-size: 13px;
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.selector-ruta__opcion:hover {
+  color: var(--cian);
+  border-color: var(--cian);
 }
 
 .selector-ruta__opcion--activa {
@@ -770,41 +861,7 @@ main,
   line-height: 1.1;
 }
 
-@media (max-width: 850px) {
-  .hero-etapas,
-  .selector-ruta,
-  .etapa-destacada__contenido {
-    grid-template-columns: 1fr;
-  }
-
-  .etapa-destacada__cabecera {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-etapas {
-    padding-block: 46px;
-  }
-
-  .selector-ruta,
-  .etapa-destacada {
-    padding: 20px;
-  }
-
-  .fila-etapa {
-    grid-template-columns: 34px 1fr;
-    gap: 12px;
-    padding: 16px;
-  }
-
-  .fila-etapa__tipo {
-    grid-column: 2;
-    justify-self: start;
-  }
-}
-
+/* Planificador */
 .hero-planifica {
   min-height: 360px;
   display: grid;
@@ -912,7 +969,6 @@ main,
   border-radius: 6px;
   color: var(--texto);
   background: #0b171c;
-  font: inherit;
 }
 
 .campo-plan select:focus-visible {
@@ -926,11 +982,8 @@ main,
   font-size: 13px;
 }
 
-.planificador > .nota-interaccion {
-  margin: 12px 2px 26px;
-}
-
 .vista-plan {
+  margin-top: 26px;
   padding: 24px;
   border: 1px solid var(--borde);
   border-radius: 10px;
@@ -1038,11 +1091,6 @@ main,
   font-weight: 700;
 }
 
-.bloque-preparacion .nota-interaccion {
-  margin-top: 18px;
-  font-size: 10px;
-}
-
 .consejos-plan {
   padding-block: 64px;
   border-top: 1px solid var(--borde);
@@ -1055,58 +1103,7 @@ main,
   line-height: 1.1;
 }
 
-@media (max-width: 950px) {
-  .formulario-plan {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .formulario-plan .boton {
-    justify-self: start;
-  }
-}
-
-@media (max-width: 800px) {
-  .hero-planifica {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .rejilla--preparacion,
-  .rejilla--tramos {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-planifica {
-    padding-block: 44px;
-  }
-
-  .planificador {
-    padding: 20px;
-  }
-
-  .planificador__cabecera,
-  .vista-plan__encabezado {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .formulario-plan,
-  .rejilla--preparacion,
-  .rejilla--tramos {
-    grid-template-columns: 1fr;
-  }
-
-  .formulario-plan .boton {
-    width: 100%;
-  }
-
-  .vista-plan {
-    padding: 18px;
-  }
-}
-
+/* Material y carruseles */
 .hero-material {
   min-height: 340px;
   display: grid;
@@ -1197,15 +1194,24 @@ main,
   font-size: 11px;
 }
 
-.productos-carrusel__controles span[aria-hidden="true"] {
+.productos-carrusel__boton {
   display: grid;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   place-items: center;
   border: 1px solid var(--borde);
   border-radius: 50%;
   color: var(--cian);
-  font-size: 16px;
+  background: var(--superficie);
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.productos-carrusel__boton:hover {
+  color: var(--fondo);
+  border-color: var(--cian);
+  background: var(--cian);
 }
 
 .productos-carrusel__lista {
@@ -1230,7 +1236,7 @@ main,
 }
 
 .producto-card__visual {
-  min-height: 190px;
+  min-height: 240px;
   position: relative;
   display: grid;
   place-items: center;
@@ -1238,77 +1244,13 @@ main,
   border: 1px solid rgba(25, 231, 232, 0.15);
   border-radius: 7px;
   background:
-    radial-gradient(ellipse at 50% 50%, rgba(25, 231, 232, 0.14), transparent 62%),
+    radial-gradient(ellipse at 50% 52%, rgba(25, 231, 232, 0.13), transparent 62%),
     #0a171c;
 }
 
-.producto-card__visual::before {
-  content: "";
-  width: 78px;
-  height: 112px;
-  border: 2px solid var(--cian);
-  border-radius: 24px 24px 18px 18px;
-  background: linear-gradient(145deg, rgba(25, 231, 232, 0.12), rgba(25, 231, 232, 0.02));
-  box-shadow: 0 0 24px rgba(25, 231, 232, 0.12);
-}
-
-.producto-card__visual::after {
-  content: "";
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  width: 34px;
-  height: 30px;
-  border: 1px solid var(--verde-neon);
-  border-radius: 8px;
-  transform: translateX(-50%);
-}
-
-.producto-card__visual > span {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  padding: 5px 7px;
-  border: 1px solid rgba(167, 139, 250, 0.45);
-  border-radius: 4px;
-  color: var(--violeta);
-  background: rgba(7, 17, 22, 0.8);
-  font-size: 8px;
-  letter-spacing: 0.08em;
-}
-
-.producto-card__visual--botella::before {
-  width: 58px;
-  height: 120px;
-  border-radius: 14px 14px 17px 17px;
-  border-color: var(--verde-neon);
-}
-
-.producto-card__visual--botella::after {
-  top: 22%;
-  width: 24px;
-  height: 13px;
-  border-color: var(--cian);
-  border-radius: 5px 5px 2px 2px;
-}
-
-.producto-card__visual--calzado::before {
-  width: 130px;
-  height: 74px;
-  border: 2px solid var(--violeta);
-  border-radius: 38px 22px 15px 18px;
-  background: linear-gradient(145deg, rgba(167, 139, 250, 0.16), rgba(25, 231, 232, 0.04));
-  clip-path: polygon(0 48%, 24% 35%, 45% 8%, 66% 18%, 78% 44%, 100% 56%, 96% 88%, 9% 92%);
-  box-shadow: 0 0 24px rgba(167, 139, 250, 0.12);
-}
-
-.producto-card__visual--calzado::after {
-  top: 63%;
-  width: 100px;
-  height: 2px;
-  border: 0;
-  border-radius: 0;
-  background: var(--cian);
+.producto-card__visual[data-producto-3d]::before,
+.producto-card__visual[data-producto-3d]::after {
+  content: none;
 }
 
 .producto-card__categoria {
@@ -1347,6 +1289,273 @@ main,
   color: var(--cian);
 }
 
+/* Modelos 3D de producto */
+.modelo-3d {
+  width: 100%;
+  height: 100%;
+  min-height: 238px;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  perspective: 900px;
+  touch-action: none;
+  user-select: none;
+}
+
+.modelo-3d__escena {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  transform: rotateX(var(--giro-x, -8deg)) rotateY(var(--giro-y, 0deg));
+  transform-style: preserve-3d;
+  transition: transform 180ms ease-out;
+}
+
+.modelo-3d__giro {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+  animation: giro-producto 20s linear infinite;
+}
+
+.modelo-3d:hover .modelo-3d__giro,
+.modelo-3d:focus-visible .modelo-3d__giro,
+.modelo-3d--arrastrando .modelo-3d__giro {
+  animation-play-state: paused;
+}
+
+.modelo-3d--arrastrando {
+  cursor: grabbing;
+}
+
+.modelo-3d__forma {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: flotar-producto 3.8s ease-in-out infinite;
+}
+
+.modelo-3d__pieza {
+  position: absolute;
+  display: block;
+  transform-style: preserve-3d;
+  background: linear-gradient(145deg, #2c7778, #102c35 70%);
+  box-shadow:
+    inset 0 0 14px rgba(255, 255, 255, 0.08),
+    0 0 20px rgba(25, 231, 232, 0.12);
+}
+
+/* Mochila */
+.modelo-3d--mochila .modelo-3d__pieza--cuerpo {
+  width: 84px;
+  height: 110px;
+  top: 20px;
+  left: 33px;
+  border: 2px solid var(--cian);
+  border-radius: 28px 28px 19px 19px;
+  transform: translateZ(20px);
+}
+
+.modelo-3d--mochila .modelo-3d__pieza--tapa {
+  width: 94px;
+  height: 27px;
+  top: 15px;
+  left: 28px;
+  border: 2px solid var(--verde-neon);
+  border-radius: 23px 23px 7px 7px;
+  transform: translateZ(23px);
+}
+
+.modelo-3d--mochila .modelo-3d__pieza--bolsillo {
+  width: 53px;
+  height: 42px;
+  top: 75px;
+  left: 48px;
+  border: 2px solid rgba(213, 255, 0, 0.8);
+  border-radius: 11px;
+  background: linear-gradient(145deg, #1f5555, #0a2026);
+  transform: translateZ(25px);
+}
+
+.modelo-3d--mochila .modelo-3d__pieza--bolsillo-lateral {
+  width: 19px;
+  height: 49px;
+  top: 66px;
+  left: 25px;
+  border: 1px solid rgba(25, 231, 232, 0.7);
+  border-radius: 8px;
+  transform: rotateY(-55deg) translateZ(5px);
+}
+
+.modelo-3d--mochila .modelo-3d__pieza--correa-izquierda,
+.modelo-3d--mochila .modelo-3d__pieza--correa-derecha {
+  width: 13px;
+  height: 96px;
+  top: 33px;
+  border: 1px solid rgba(213, 255, 0, 0.7);
+  border-radius: 9px;
+  background: #173b3b;
+}
+
+.modelo-3d--mochila .modelo-3d__pieza--correa-izquierda {
+  left: 36px;
+  transform: translateZ(30px) rotate(-6deg);
+}
+
+.modelo-3d--mochila .modelo-3d__pieza--correa-derecha {
+  right: 36px;
+  transform: translateZ(30px) rotate(6deg);
+}
+
+/* Botella */
+.modelo-3d--botella .modelo-3d__pieza--cuerpo {
+  width: 62px;
+  height: 112px;
+  top: 28px;
+  left: 44px;
+  border: 2px solid var(--cian);
+  border-radius: 17px 17px 22px 22px;
+  background: linear-gradient(90deg, #12343d, #21747a 48%, #102a32);
+  transform: translateZ(18px);
+}
+
+.modelo-3d--botella .modelo-3d__pieza--cuello {
+  width: 31px;
+  height: 18px;
+  top: 15px;
+  left: 60px;
+  border: 2px solid var(--cian);
+  border-radius: 6px 6px 2px 2px;
+  background: #17434a;
+  transform: translateZ(19px);
+}
+
+.modelo-3d--botella .modelo-3d__pieza--tapon {
+  width: 37px;
+  height: 15px;
+  top: 5px;
+  left: 57px;
+  border: 2px solid var(--verde-neon);
+  border-radius: 5px;
+  background: #657d18;
+  transform: translateZ(20px);
+}
+
+.modelo-3d--botella .modelo-3d__pieza--asa {
+  width: 28px;
+  height: 31px;
+  top: 7px;
+  left: 80px;
+  border: 4px solid var(--verde-neon);
+  border-left-color: transparent;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  transform: translateZ(10px);
+}
+
+/* Calzado */
+.modelo-3d--calzado .modelo-3d__forma {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+.modelo-3d--calzado .modelo-3d__pieza--suela {
+  width: 137px;
+  height: 29px;
+  top: 95px;
+  left: 7px;
+  border: 2px solid var(--verde-neon);
+  border-radius: 15px 22px 19px 13px;
+  background: linear-gradient(180deg, #526312, #15231d);
+  transform: translateZ(18px) rotate(-3deg);
+}
+
+.modelo-3d--calzado .modelo-3d__pieza--parte-superior {
+  width: 126px;
+  height: 73px;
+  top: 38px;
+  left: 15px;
+  border: 2px solid var(--cian);
+  border-radius: 35px 29px 10px 18px;
+  background: linear-gradient(145deg, #24777b, #153c49 60%, #10262e);
+  clip-path: polygon(0 57%, 18% 40%, 43% 8%, 67% 14%, 78% 46%, 100% 69%, 94% 94%, 9% 91%);
+  transform: translateZ(20px);
+}
+
+.modelo-3d--calzado .modelo-3d__pieza--puntera {
+  width: 46px;
+  height: 31px;
+  top: 76px;
+  left: 91px;
+  border: 1px solid var(--verde-neon);
+  border-radius: 50% 35% 10px 12px;
+  background: rgba(213, 255, 0, 0.15);
+  transform: translateZ(25px) rotate(-9deg);
+}
+
+.modelo-3d--calzado .modelo-3d__pieza--lengueta {
+  width: 31px;
+  height: 43px;
+  top: 34px;
+  left: 67px;
+  border: 2px solid rgba(213, 255, 0, 0.8);
+  border-radius: 13px 13px 4px 4px;
+  transform: translateZ(26px) rotate(13deg);
+}
+
+.modelo-3d--calzado .modelo-3d__pieza--cordones {
+  width: 42px;
+  height: 3px;
+  top: 66px;
+  left: 57px;
+  background: var(--verde-neon);
+  box-shadow: 0 9px var(--verde-neon), 0 18px var(--verde-neon);
+  transform: translateZ(29px) rotate(11deg);
+}
+
+.modelo-3d__ayuda {
+  position: absolute;
+  right: 9px;
+  bottom: 8px;
+  padding: 5px 7px;
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+  color: var(--texto-suave);
+  background: rgba(7, 17, 22, 0.82);
+  font-size: 9px;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+@keyframes giro-producto {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes flotar-producto {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -7px;
+  }
+}
+
 .nota-seleccion {
   margin: 24px 0 64px;
   padding: 32px;
@@ -1369,10 +1578,70 @@ main,
   font-size: 14px;
 }
 
-@media (max-width: 800px) {
+/* Transiciones entre páginas */
+.transicion-entrada body {
+  animation: entrada-pagina 600ms ease both;
+}
+
+.transicion-salida body {
+  animation: salida-pagina 260ms ease both;
+  pointer-events: none;
+}
+
+@keyframes entrada-pagina {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes salida-pagina {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 950px) {
+  .formulario-plan {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .formulario-plan .boton {
+    justify-self: start;
+  }
+
+  .hero-rutas,
+  .hero-etapas,
+  .hero-planifica,
   .hero-material {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
+  }
+
+  .hero-rutas {
+    min-height: auto;
+  }
+
+  .selector-ruta,
+  .etapa-destacada__contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .etapa-destacada__cabecera {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .rejilla--preparacion,
+  .rejilla--tramos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .productos-carrusel__lista {
@@ -1380,10 +1649,162 @@ main,
   }
 }
 
+@media (max-width: 900px) {
+  .cabecera {
+    flex-wrap: wrap;
+    padding-block: 18px;
+  }
+
+  .navegacion {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .rejilla--rutas,
+  .rejilla--pasos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pie {
+    flex-wrap: wrap;
+  }
+}
+
+/* Ajustes para móviles */
 @media (max-width: 600px) {
+  .cabecera,
+  main,
+  .pie {
+    width: min(100% - 32px, var(--ancho-contenido));
+  }
+
+  .cabecera > .boton {
+    min-height: 42px;
+    padding-inline: 14px;
+    font-size: 12px;
+  }
+
+  .navegacion {
+    justify-content: flex-start;
+    gap: 16px;
+    overflow-x: auto;
+  }
+
+  .navegacion a {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-block: 52px;
+  }
+
+  .hero__texto > p:not(.etiqueta) {
+    font-size: 16px;
+  }
+
+  .mapa-estatico {
+    min-height: 240px;
+    padding: 18px;
+  }
+
+  .mapa-3d,
+  .mapa-3d--inicio {
+    min-height: 270px;
+  }
+
+  .mapa-3d--rutas {
+    min-height: 310px;
+  }
+
+  .seccion {
+    padding-block: 46px;
+  }
+
+  .seccion__encabezado,
+  .llamada-final {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .rejilla--rutas,
+  .rejilla--pasos,
+  .rejilla--preparacion,
+  .rejilla--tramos {
+    grid-template-columns: 1fr;
+  }
+
+  .llamada-final {
+    padding: 24px;
+    margin-bottom: 42px;
+  }
+
+  .pie,
+  .pie__navegacion {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .comparativa {
+    padding: 46px 16px;
+  }
+
+  .comparativa th,
+  .comparativa td {
+    padding: 14px;
+  }
+
+  .hero-rutas,
+  .hero-etapas,
+  .hero-planifica,
   .hero-material {
     min-height: auto;
     padding-block: 44px;
+  }
+
+  .selector-ruta,
+  .etapa-destacada,
+  .planificador {
+    padding: 20px;
+  }
+
+  .fila-etapa {
+    grid-template-columns: 34px 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .fila-etapa__tipo {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .planificador__cabecera,
+  .vista-plan__encabezado {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .formulario-plan,
+  .rejilla--preparacion,
+  .rejilla--tramos {
+    grid-template-columns: 1fr;
+  }
+
+  .formulario-plan .boton {
+    width: 100%;
+  }
+
+  .vista-plan {
+    padding: 18px;
   }
 
   .indice-material {
@@ -1402,8 +1823,35 @@ main,
     grid-auto-columns: 86%;
   }
 
+  .producto-card__visual {
+    min-height: 225px;
+  }
+
   .nota-seleccion {
     margin-bottom: 42px;
     padding: 22px;
+  }
+
+  .mapa-3d__ayuda {
+    right: 8px;
+    bottom: 8px;
+    max-width: calc(100% - 16px);
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .transicion-entrada body,
+  .transicion-salida body {
+    animation: none;
   }
 }
